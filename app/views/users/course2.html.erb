@@ -1,1 +1,6 @@
 <h1 size="10"><strong><%=@user.cn2%></strong></h1>
+<%Attachment.all.each do |t|%>
+<%if t.course==@user.cn2%>
+<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> Posted by: <%=t.user%> <br />
+<%end%>
+<%end%>

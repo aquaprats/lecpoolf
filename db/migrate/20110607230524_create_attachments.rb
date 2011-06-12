@@ -4,10 +4,11 @@ class CreateAttachments < ActiveRecord::Migration
            t.column :filename, :string
            t.column :content_type, :string
            t.column :data, :binary
-
-      
+           t.column :user_id, :integer
+           t.column :course, :string
     end
-  end
+add_index :attachments, :user_id  
+end
 
   def self.down
     drop_table :attachments

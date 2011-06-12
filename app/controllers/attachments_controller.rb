@@ -1,4 +1,5 @@
 class AttachmentsController < ApplicationController
+
 def new
  @attachment=Attachment.new
 end    
@@ -16,7 +17,8 @@ def show
         return if params[:attachment].blank?
 
         @attachment = Attachment.new
-        @attachment.uploaded_file = params[:attachment]
+        @attachment.course=params[:attachment][:course]
+        @attachment.uploaded_file = params[:a]
 
         if @attachment.save
             flash[:notice] = "Thank you for your submission..."

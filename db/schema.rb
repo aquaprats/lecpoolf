@@ -13,10 +13,14 @@
 ActiveRecord::Schema.define(:version => 20110611085103) do
 
   create_table "attachments", :force => true do |t|
-    t.string "filename"
-    t.string "content_type"
-    t.binary "data"
+    t.string  "filename"
+    t.string  "content_type"
+    t.binary  "data"
+    t.integer "user_id"
+    t.string  "course"
   end
+
+  add_index "attachments", ["user_id"], :name => "index_attachments_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
