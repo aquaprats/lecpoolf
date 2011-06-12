@@ -1,7 +1,7 @@
 class AttachmentsController < ApplicationController
 
 def new
- @attachment=Attachment.new
+ @attachment = Attachment.new
 end    
 def me 
 a = Attachment.find(params[:id])
@@ -16,10 +16,10 @@ def show
     def create      
         return if params[:attachment].blank?
 
-        @attachment = Attachment.new
+       @attachment = Attachment.new
         @attachment.course=params[:attachment][:course]
         @attachment.uploaded_file = params[:a]
-
+        @attachment.user_id=current_user.id
         if @attachment.save
             flash[:notice] = "Thank you for your submission..."
             redirect_to :action => "show"

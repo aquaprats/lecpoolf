@@ -1,6 +1,6 @@
 <h3>Files:</h3>
 <%Attachment.all.each do |t|%>
-<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a><br />
+<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a>  | Posted By:<%=t.user.name%><br />
 <%end%>
 
 
