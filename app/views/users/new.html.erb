@@ -23,6 +23,17 @@
 <label for="user_rollno">Roll No</label><br />
 <input id="user_rollno" name="user[rollno]" size="10" />
 </div>
+<br />
+
+
+<div class="field">
+    <%= f.label :image,"Profile Pic"%><br/>
+    <%= f.file_field :image %>
+</div>
+<div class="field">
+    <%= f.label :remote_image_url, "Or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+</div>
 
 <div class="field">
 <label for="user_department">Department</label><br />
@@ -38,17 +49,11 @@
   <option value="Industrial and Management Engineering">Chemical Engineering</option>
   <option value="Material Science and Engineering">Material Science and Engineering</option>
  <option value="Mechanical Engineering">Mechanical Engineering</option>
-</div>
+<option value="Maths">Maths</option>
+<option value="Physics">Physics</option>
+<option value="Chemistry">Chemistry</option>
 
-<div class="field">
-    <%= f.file_field :image %></br>
 </div>
-<div class="field">
-    <%= f.label :remote_image_url, "Or image URL" %><br />
-    <%= f.text_field :remote_image_url %>
-</div>
-
-
 
 </select>
 <div class="actions">

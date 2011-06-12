@@ -19,6 +19,18 @@ resources :users
 
 
 
+match '/attachments/index',:to=>'attachments#index'
+match '/attachments/index2',:to=>'attachments#index2'
+
+match '/attachments/index3',:to=>'attachments#index3'
+match '/attachments/index4',:to=>'attachments#index4'
+match '/attachments/index5',:to=>'attachments#index5'
+match '/attachments/index6',:to=>'attachments#index6'
+match '/attachments/index7',:to=>'attachments#index7'
+match '/attachments/index8',:to=>'attachments#index8'
+
+
+
 
 
 resources :sessions, :only => [:new, :create, :destroy]

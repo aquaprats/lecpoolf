@@ -1,3 +1,11 @@
+<h3>Search:</h3>
+ <%= form_tag attachments_index_path, :html => {:method => :get} do |f| %>
+   <%= text_field_tag 'search[filename_contains]' %>
+    <%= submit_tag "Search By Filename", :class => "search-button", :name => "submit", :id => 'search_submit' %>
+
+  <% end %>
+<br />
+
 <h3>Files:</h3>
 <%Attachment.all.each do |t|%>
 <a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a>  | Posted By:<%=t.user.name%><br />

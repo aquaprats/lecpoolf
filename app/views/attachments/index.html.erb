@@ -1,0 +1,12 @@
+<h3>Search Results:</h3>
+<%a=0%>
+<%@attachments.each do |t|%>
+<%if t.course==current_user.cn1%>
+<%a=a+1%>
+<%end%>
+<%end%>
+<strong><%=a%> Matching Results Found!</strong><br /><br />
+<%@attachments.each do |t|%>
+<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a>  | Posted By:<%=t.user.name%><br />
+<%end%>
+

@@ -5,7 +5,7 @@ gem 'rails', '3.0.7'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.gita
 gem 'gravatar_image_tag', '0.1.0'
-
+gem 'meta_search'
 gem 'sqlite3'
 gem "rmagick"
 gem "carrierwave"
