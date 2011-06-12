@@ -1,0 +1,6 @@
+<h3>Files:</h3>
+<%Attachment.all.each do |t|%>
+<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a><br />
+<%end%>
+
+

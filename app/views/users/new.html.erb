@@ -1,0 +1,57 @@
+<h1>Sign up</h1>
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+
+
+<%= render 'shared/error_messages', :object => f.object %>
+<div class="field">
+<%= f.label :name %><br />
+<%= f.text_field :name %>
+</div>
+<div class="field">
+<%= f.label :email %><br />
+<%= f.text_field :email %>
+</div>
+<div class="field">
+<%= f.label :password %><br />
+<%= f.password_field :password %>
+</div>
+<div class="field">
+<%= f.label :password_confirmation, "Confirmation" %><br />
+<%= f.password_field :password_confirmation %>
+</div>
+<div class="field">
+<label for="user_rollno">Roll No</label><br />
+<input id="user_rollno" name="user[rollno]" size="10" />
+</div>
+
+<div class="field">
+<label for="user_department">Department</label><br />
+
+<select id="user_department" name="user[department]">
+  <option value="Aerospace Engineering">Aerospace Engineering</option>
+  <option value="Biological Sciences and Bioengineering">Biological Sciences and Bioengineering</option>
+  <option value="Chemical Engineering">Chemical Engineering</option>
+  <option value="Civil Engineering">Civil Engineering</option>
+
+<option value="Computer Science and Engineering">Computer Science and Engineering</option>
+  <option value="Electrical Engineering">Electrical Engineering</option>
+  <option value="Industrial and Management Engineering">Chemical Engineering</option>
+  <option value="Material Science and Engineering">Material Science and Engineering</option>
+ <option value="Mechanical Engineering">Mechanical Engineering</option>
+</div>
+
+<div class="field">
+    <%= f.file_field :image %></br>
+</div>
+<div class="field">
+    <%= f.label :remote_image_url, "Or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+</div>
+
+
+
+</select>
+<div class="actions">
+<%= f.submit "Sign up" %>
+</div>
+<% end %>
