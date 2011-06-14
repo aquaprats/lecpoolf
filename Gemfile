@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem "rmagick"
 gem "carrierwave"
 gem 'will_paginate', '3.0.pre2'
-
+gem 'thumbs_up'
 
 gem 'factory_girl_rails', '1.0'
 

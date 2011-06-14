@@ -2,6 +2,12 @@ Sampleapp::Application.routes.draw do
   
 
 
+resources :attachments do
+  member do
+    post :vote_up
+  end
+end
+
 
 
 
@@ -15,10 +21,10 @@ Sampleapp::Application.routes.draw do
 
 
 resources :users
+match '/attachments/:id/vote_down/', :to=>'attachments#vote_down'
 
 
-
-
+match '/attachments/:id/vote_up/', :to=>'attachments#vote_up'
 match '/attachments/index',:to=>'attachments#index'
 match '/attachments/index2',:to=>'attachments#index2'
 

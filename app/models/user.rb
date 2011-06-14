@@ -9,7 +9,7 @@ attr_accessible :name, :email, :password, :password_confirmation,:rollno,:depart
 mount_uploader :image, ImageUploader
 
 
-
+acts_as_voter
 
 
 

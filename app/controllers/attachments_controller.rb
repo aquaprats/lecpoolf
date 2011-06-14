@@ -2,12 +2,30 @@ class AttachmentsController < ApplicationController
 
 def new
  @attachment = Attachment.new
-end    
+end 
+  
 def me 
 a = Attachment.find(params[:id])
 send_data   a.data, :filename => a.filename, :type => a.content_type
     end
+def vote_up
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
 
+      render :nothing => true, :status => 200
+    rescue ActiveRecord::RecordInvalid
+      render :show => true, :status => 404
+    end
+  end
+def vote_down
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      render :nothing => true, :status => 200
+    rescue ActiveRecord::RecordInvalid
+      render :show => true, :status => 404
+    end
+  end
 def show
         #@attachment = Attachment.find(params[:id])
        #send_data  @attachment.id, @attachment.data, :filename => @attachment.filename, :type => @attachment.content_type
