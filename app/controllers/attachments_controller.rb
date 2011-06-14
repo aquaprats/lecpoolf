@@ -12,18 +12,18 @@ def vote_up
     begin
       current_user.vote_for(@attachment = Attachment.find(params[:id]))
 
-      render :nothing => true, :status => 200
+      render :show => true
     rescue ActiveRecord::RecordInvalid
-      render :show => true, :status => 404
+      render :show => true
     end
   end
 def vote_down
     begin
       current_user.vote_against(@attachment = Attachment.find(params[:id]))
 
-      render :nothing => true, :status => 200
+      render :show => true
     rescue ActiveRecord::RecordInvalid
-      render :show => true, :status => 404
+      render :show => true
     end
   end
 def show

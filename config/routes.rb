@@ -2,20 +2,14 @@ Sampleapp::Application.routes.draw do
   
 
 
-resources :attachments do
-  member do
-    post :vote_up
-  end
-end
-
 
 
 
 
   get "attachments/show"
 
-  get "attachments/create"
-  post "attachments/create"
+  
+ post "attachments/create"
 
 
 
@@ -23,7 +17,7 @@ end
 resources :users
 match '/attachments/:id/vote_down/', :to=>'attachments#vote_down'
 
-
+match '/attachments/create/',:to=>'attachments#create'
 match '/attachments/:id/vote_up/', :to=>'attachments#vote_up'
 match '/attachments/index',:to=>'attachments#index'
 match '/attachments/index2',:to=>'attachments#index2'

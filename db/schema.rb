@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110613151633) do
   end
 
   add_index "ratings", ["attachment_id"], :name => "index_ratings_on_attachment_id"
+  add_index "ratings", ["user_id", "attachment_id"], :name => "index_ratings_on_user_id_and_attachment_id", :unique => true
   add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
 
   create_table "users", :force => true do |t|
