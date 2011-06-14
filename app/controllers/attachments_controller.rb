@@ -26,6 +26,133 @@ def vote_down
       render :show => true
     end
   end
+def vote_up1
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course1' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course1'
+    end
+  end
+def vote_down1
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course1'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course1'
+    end
+  end
+def vote_up2
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course2' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course2'
+    end
+  end
+def vote_down2
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course2'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course2'
+    end
+  end
+def vote_up3
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course3' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course3'
+    end
+  end
+def vote_down3
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course3'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course3'
+    end
+  end
+def vote_up4
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course4' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course4'
+    end
+  end
+def vote_down4
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course4'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course4'
+    end
+  end
+def vote_up5
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course5' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course5'
+    end
+  end
+def vote_down5
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course5'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course5'
+    end
+  end
+def vote_up6
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course6' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course6'
+    end
+  end
+def vote_down6
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course6'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course6'
+    end
+  end
+
+def vote_up7
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course7' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course7'
+    end
+  end
+def vote_down7
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course7'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course7'
+    end
+  end
 def show
         #@attachment = Attachment.find(params[:id])
        #send_data  @attachment.id, @attachment.data, :filename => @attachment.filename, :type => @attachment.content_type

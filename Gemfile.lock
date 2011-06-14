@@ -114,5 +114,6 @@ DEPENDENCIES
   sqlite3
   sqlite3-ruby (= 1.2.5)
   thumbs_up
+  tzinfo (= 0.3.28)
   webrat (= 0.7.1)
   will_paginate (= 3.0.pre2)

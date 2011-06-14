@@ -15,27 +15,24 @@ end
 
 
 def course1
-@user=User.find(params[:id])
+
 end
 
 def course2
-@user=User.find(params[:id])
+
 end
 def course3
-@user=User.find(params[:id])
+
 end
 def course4
-@user=User.find(params[:id])
 end
 def course5
-@user=User.find(params[:id])
+
 end
 def course6
-@user=User.find(params[:id])
 end
 
 def course7
-@user=User.find(params[:id])
 end
 
 def index

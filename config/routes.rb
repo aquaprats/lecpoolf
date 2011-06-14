@@ -11,9 +11,20 @@ Sampleapp::Application.routes.draw do
   
  post "attachments/create"
 
-
-
-
+match '/attachments/:id/vote_up1/', :to=>'attachments#vote_up1'
+match '/attachments/:id/vote_down1/', :to=>'attachments#vote_down1'
+match '/attachments/:id/vote_up2/', :to=>'attachments#vote_up2'
+match '/attachments/:id/vote_down2/', :to=>'attachments#vote_down2'
+match '/attachments/:id/vote_up3/', :to=>'attachments#vote_up3'
+match '/attachments/:id/vote_down3/', :to=>'attachments#vote_down3'
+match '/attachments/:id/vote_up4/', :to=>'attachments#vote_up4'
+match '/attachments/:id/vote_down4/', :to=>'attachments#vote_down4'
+match '/attachments/:id/vote_up5/', :to=>'attachments#vote_up5'
+match '/attachments/:id/vote_down5/', :to=>'attachments#vote_down5'
+match '/attachments/:id/vote_up6/', :to=>'attachments#vote_up6'
+match '/attachments/:id/vote_down6/', :to=>'attachments#vote_down6'
+match '/attachments/:id/vote_up7/', :to=>'attachments#vote_up7'
+match '/attachments/:id/vote_down7/', :to=>'attachments#vote_down7'
 resources :users
 match '/attachments/:id/vote_down/', :to=>'attachments#vote_down'
 
