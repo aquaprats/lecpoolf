@@ -22,18 +22,6 @@ ActiveRecord::Schema.define(:version => 20110613151633) do
 
   add_index "attachments", ["user_id"], :name => "index_attachments_on_user_id"
 
-  create_table "ratings", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "attachment_id"
-    t.integer  "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ratings", ["attachment_id"], :name => "index_ratings_on_attachment_id"
-  add_index "ratings", ["user_id", "attachment_id"], :name => "index_ratings_on_user_id_and_attachment_id", :unique => true
-  add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

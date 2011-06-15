@@ -16,7 +16,7 @@
 
 <%a=0%>
 <a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/attachments/<%=t.id%>/vote_up5/" data-method="post" rel="nofollow"><img src="/images/thumbs_up.png" />&nbsp;&nbsp;</a>
+<a href="/attachments/<%=t.id%>/vote_up5/" data-method="post" rel="nofollow"><br/><img src="/images/thumbs_up.png" />&nbsp;&nbsp;</a>
 
 <%Vote.all.each do |f|%>
 <%if f.voteable_id==t.id && f.vote%>
