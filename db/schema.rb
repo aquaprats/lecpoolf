@@ -22,6 +22,28 @@ ActiveRecord::Schema.define(:version => 20110613151633) do
 
   add_index "attachments", ["user_id"], :name => "index_attachments_on_user_id"
 
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "conversation_id"
+  end
+
+  create_table "conversations", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "forum_id"
+  end
+
+  create_table "forums", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

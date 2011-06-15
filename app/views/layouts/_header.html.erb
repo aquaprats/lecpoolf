@@ -1,12 +1,16 @@
 <header>
 
+<% if signed_in? %>
+<%= link_to logo, current_user %>
 
+<%else%>
 <%= link_to logo, root_path %>
+<%end%>
 <nav class="round">
 
 <nav class="round">
 <ul>
-<li><%= link_to "Home", root_path %></li>
+
 
 
 <% if signed_in? %>
@@ -18,10 +22,11 @@
 
 <% if signed_in? %>
 <li><%= link_to "Upload", attachments_create_path  %></li>
-
+<li><%= link_to "Forum", forums_path %></li>
 
 <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
 <% else %>
+<li><%= link_to "Home", root_path %></li>
 <li><%= link_to "Sign in", signin_path %></li>
 <% end %>
 

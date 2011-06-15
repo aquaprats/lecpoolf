@@ -3,7 +3,7 @@ width: 700px;
 }
 body {background-image:url('../images/11111.jpg');
  background-repeat:no-repeat;
- 
+ background-attachment:fixed;
 }
 header {
 padding-top: 20px;
@@ -93,4 +93,11 @@ margin-top: 1em;
 }
 .users li {
 list-style: none;
+}
+
+.listing {
+  margin: 5px;
+  padding: 5px;
+  background: #EFEFEF;																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		
+  border-radius: 5px;
 }
