@@ -1,5 +1,5 @@
 <h1>Edit Profile</h1>
-<%= form_for(@user) do |f| %>
+<%= form_for @user,:html => {:multipart => true} do |f| %>
 <%= render 'shared/error_messages', :object => f.object %>
 
 <div class="field">
@@ -14,6 +14,16 @@
 <%= f.label :password_confirmation, "Confirmation" %><br />
 <%= f.password_field :password_confirmation %>
 </div>
+
+<div class="field">
+    <%= f.label :image,"Profile Pic"%><br/>
+    <%= f.file_field :image %>
+</div>
+<div class="field">
+    <%= f.label :remote_image_url, "Or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+</div>
+
 <div class="field">
 <%= f.label :cn1, "Course No.1" %><br />
 <%= f.text_field :cn1 %>

@@ -1,7 +1,7 @@
 Sampleapp::Application.routes.draw do 
 
 
-  match 'home' => 'home#index', :as => :home
+  
 
   resources :conversations do
     resources :comments
@@ -12,7 +12,7 @@ Sampleapp::Application.routes.draw do
   end
   
 
-
+  resources :users
 
 
 
@@ -36,7 +36,7 @@ match '/attachments/:id/vote_up6/', :to=>'attachments#vote_up6'
 match '/attachments/:id/vote_down6/', :to=>'attachments#vote_down6'
 match '/attachments/:id/vote_up7/', :to=>'attachments#vote_up7'
 match '/attachments/:id/vote_down7/', :to=>'attachments#vote_down7'
-resources :users
+
 match '/attachments/:id/vote_down/', :to=>'attachments#vote_down'
 
 match '/attachments/create/',:to=>'attachments#create'
@@ -64,6 +64,8 @@ match '/users/:id/course4', :to=>'users#course4'
 match '/users/:id/course5', :to=>'users#course5'
 match '/users/:id/course6', :to=>'users#course6'
 match '/users/:id/course7', :to=>'users#course7'
+match '/users/:id/delete' , :to=>'users#delete'
+    
   match '/developers', :to=>'pages#developers'
 
   match '/contact', :to=>'pages#contact'
@@ -83,7 +85,7 @@ root :to=>'pages#home'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  #   
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):

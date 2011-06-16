@@ -2,16 +2,6 @@ class UsersController < ApplicationController
 before_filter :authenticate, :only => [ :index,:edit,:update]
 before_filter :correct_user, :only => [:edit, :update]
 before_filter :admin_user, :only => :destroy
-def shorten (string, count = 30)
-	if string.length >= count 
-		shortened = string[0, count]
-		splitted = shortened.split(/\s/)
-		words = splitted.length
-		splitted[0, words-1].join(" ") + ' ...'
-	else 
-		string
-	end
-end
 
 
 def course1
@@ -56,9 +46,9 @@ def create
 
 
 if @user.save
-sign_in @user
+# sign_in @user
 flash[:success] = "Welcome to lecpool!"
-redirect_to @user
+redirect_to signin_path
 
 @user.send_activate
 flash[:notice] = "Signup successful. Activation e-mail has been sent"
@@ -75,13 +65,13 @@ end
 
  def delete
 		
-			@u=User.find(params[:id])
-			if @u == nil
+			@user=User.find(params[:id])
+			if @user == nil
 				flash[:warning] = "You must be logged in to delete yourself"
 				redirect_to signin_path
 			else
 				
-				u.destroy
+				@user.destroy
 				flash[:notice] = "You were deleted from the database and logged out"
 				redirect_to signout_path
 			end
@@ -92,7 +82,7 @@ end
 			 
 			if @user.activate?
 				flash[:notice]="You have been activated and can now log in"
-				redirect_to @user
+				redirect_to signin_path
 			else
 				flash[:warning]="We could not activate you.  Send us email."
 				redirect_to signin_path
