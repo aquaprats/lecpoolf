@@ -13,9 +13,11 @@ Sampleapp::Application.routes.draw do
   
 
   resources :users
+  
 
-
-
+match'/videos',:to=>'videos#index'
+  
+match '/videos/create',:to=>'videos#create'
 
   get "attachments/show"
 

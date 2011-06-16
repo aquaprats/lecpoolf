@@ -7,7 +7,8 @@ attr_accessible :name, :email, :password, :password_confirmation,:rollno,:depart
 :cn2,:cn3,:cn4,:cn5,:cn6,:cn7, :image, :remote_image_url,:id
 
 mount_uploader :image, ImageUploader
-
+has_many :attachments
+has_many :videos
 
 acts_as_voter
 
