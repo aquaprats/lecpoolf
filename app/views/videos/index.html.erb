@@ -3,9 +3,14 @@
 
 <%Video.all.each do |t| %>
 <% a=t.video_code.split('/').last%>
+<% b=t.video_code.split('/')%>
+<%c=b[2]%>
+<%if c=="youtu.be" %>
 <h4>Title:<%=t.title%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By:<%=t.user.name%></h4>
 
 <iframe width="560" height="349" src="http://youtube.com/embed/<%=a%>" frameborder="0" allowfullscreen></iframe><br/><br/><br/>
+<%end%>
+
 <%end%>
 
 

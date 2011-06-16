@@ -18,7 +18,7 @@ end
         @video.video_code = params[:video][:video_code]
         @video.user_id=current_user.id
         if @video.save
-            flash[:notice] = "Thank you for your submission..."
+            flash[:notice] = "Thank you for your submission...If video uploaded doesn't appear then you haven't provided a correct youtube link !"
             redirect_to :action => "index"
         else
             flash[:error] = "All fields are required,  please check. If still it doesn't upload then this particular video has already been uploaded by someone else!"
