@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = @conversation.comments.new(params[:comment])
-
+  @comment.user_id=current_user.id
     respond_to do |format|
       if @comment.save
         format.html { redirect_to(conversation_path(@conversation), :notice => 'Comment was successfully created.') }

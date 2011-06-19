@@ -24,25 +24,34 @@ ActiveRecord::Schema.define(:version => 20110616140925) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "conversation_id"
   end
 
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "conversations", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "forum_id"
   end
 
+  add_index "conversations", ["user_id"], :name => "index_conversations_on_user_id"
+
   create_table "forums", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "forums", ["user_id"], :name => "index_forums_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -61,7 +70,7 @@ ActiveRecord::Schema.define(:version => 20110616140925) do
     t.string   "cn6"
     t.string   "cn7"
     t.string   "image"
-    t.boolean  "admin"
+    t.boolean  "admin",              :default => false
     t.boolean  "activated"
   end
 

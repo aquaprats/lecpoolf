@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Question Title:</b>
   <%= @conversation.title %>
 </p>
-
+<p>
+  <b>Posted By:</b>
+  <%= @conversation.user.name %>
+</p>
 <p>
   <b>Description:</b>
   <%= @conversation.description %>
@@ -17,7 +20,8 @@
     <% @comments.each do |c| %>
       <% unless c.content.nil? %>
       <div class="listing">
-        <%= c.content %>
+        <%= c.content %></br>
+        Posted By:<%=c.user.name%>
       </div>
       <% end %>
     <% end %>

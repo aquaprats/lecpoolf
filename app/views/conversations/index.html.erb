@@ -1,4 +1,4 @@
-<h1>Listing Answers</h1>
+<h1>Listing Questions</h1>
 
 <table>
   <tr>
@@ -11,8 +11,9 @@
 
 <% @conversations.each do |conversation| %>
   <tr>
-    <td><%= conversation.title %></td>
-    <td><%= conversation.description %></td>
+    <td>Question Title:<%= conversation.title %></td>
+    <td>Posted By:<%= conversation.user.name %></td>
+    <td>Description:<%= conversation.description %></td>
     <td><%= link_to 'Show', conversation %></td>
     <td><%= link_to 'Edit', edit_conversation_path(conversation) %></td>
     <td><%= link_to 'Destroy', conversation, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New Answer', new_conversation_path %>
+<%= link_to 'New Question', new_conversation_path %>

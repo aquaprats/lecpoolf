@@ -5,6 +5,10 @@
   <%= @comment.content %>
 </p>
 
+<p>
+  <b>Posted By:</b>
+  <%= @comment.user.name %>
+</p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

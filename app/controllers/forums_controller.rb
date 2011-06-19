@@ -46,7 +46,7 @@ before_filter :authenticate
   # POST /forums.xml
   def create
     @forum = Forum.new(params[:forum])
-
+     @forum.user_id=current_user.id
     respond_to do |format|
       if @forum.save
         format.html { redirect_to(@forum, :notice => 'Forum was successfully created.') }

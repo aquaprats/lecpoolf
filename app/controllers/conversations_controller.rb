@@ -49,6 +49,7 @@ class ConversationsController < ApplicationController
   def create
     #@conversation = Conversation.new(params[:conversation])
     @conversation = @forum.conversations.new(params[:conversation])
+      @conversation.user_id=current_user.id
 
     respond_to do |format|
       if @conversation.save

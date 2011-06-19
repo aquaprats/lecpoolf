@@ -9,6 +9,9 @@ attr_accessible :name, :email, :password, :password_confirmation,:rollno,:depart
 mount_uploader :image, ImageUploader
 has_many :attachments
 has_many :videos
+has_many :forums
+has_many :conversations
+has_many :comments
 
 acts_as_voter
 
