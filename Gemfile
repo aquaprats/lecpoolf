@@ -14,6 +14,8 @@ gem 'thumbs_up'
 gem 'tzinfo' ,'0.3.28'
 gem 'factory_girl_rails', '1.0'
 gem 'hpricot'
+gem 'heroku'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

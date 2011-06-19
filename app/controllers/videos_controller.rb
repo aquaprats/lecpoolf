@@ -2,6 +2,26 @@ class VideosController < ApplicationController
 
 before_filter :authenticate
 
+
+def vote_up
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+      render :show => true
+    rescue ActiveRecord::RecordInvalid
+      render :show => true
+    end
+  end
+def vote_down
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      render :show => true
+    rescue ActiveRecord::RecordInvalid
+      render :show => true
+    end
+  end
+
 def index
 end
 

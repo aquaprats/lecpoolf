@@ -18,6 +18,8 @@ Sampleapp::Application.routes.draw do
 match'/videos',:to=>'videos#index'
   
 match '/videos/create',:to=>'videos#create'
+match '/videos/:id/vote_up/', :to=>'videos#vote_up'
+match '/videos/:id/vote_down/', :to=>'videos#vote_down'
 
   get "attachments/show"
 
