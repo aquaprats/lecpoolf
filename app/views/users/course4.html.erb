@@ -19,7 +19,7 @@
 <a href="/attachments/<%=t.id%>/vote_up4/" data-method="post" rel="nofollow"><br/><img src="/images/thumbs_up.png" />&nbsp;&nbsp;</a>
 
 <%Vote.all.each do |f|%>
-<%if f.voteable_id==t.id && f.vote%>
+<%if f.voteable_id==t.id && f.voteable_type=="Attachment" && f.vote%>
 <%a=a+1%>
 <%end%>
 <%end%>
@@ -27,7 +27,7 @@
 <%a=0%>
 <a href="/attachments/<%=t.id%>/vote_down4/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;</a>
 <%Vote.all.each do |f|%>
-<%if f.voteable_id==t.id && !f.vote%>
+<%if f.voteable_id==t.id && f.voteable_type=="Attachment" && !f.vote%>
 <%a=a+1%>
 <%end%>
 <%end%>
