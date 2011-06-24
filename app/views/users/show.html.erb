@@ -12,6 +12,7 @@
 
 <h1>
 <%= image_tag @user.image_url(:thumb) if @user.image? %>
+<%= gravatar_for @user %>
 
 </h1>
 </td>
