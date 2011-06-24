@@ -12,7 +12,7 @@
 
 <h1>
 <%= image_tag @user.image_url(:thumb) if @user.image? %>
-<%= image_tag(@user.image_cache_path(:cache_id => @user.image_cache[/^[\d-]+/], :filename => @user.image_cache[/[a-zA-Z0-9 _\.]+$/])) if @user.image_cache %>
+
 </h1>
 </td>
 <td class="sidebar" >

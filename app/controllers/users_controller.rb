@@ -114,10 +114,7 @@ flash[:success] = "User destroyed."
 redirect_to users_path
 end
 
-def image_cache
-  headers['Cache-Control'] = 'public; max-age=600' # cache image for 10 minutes
-  send_file "#{RAILS_ROOT}/tmp/uploads/#{params['cache_id']}/#{params['filename']}", :disposition => 'inline', :type => "image/png"
-end
+
 
 private
 def authenticate

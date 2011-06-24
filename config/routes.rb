@@ -1,7 +1,7 @@
 Sampleapp::Application.routes.draw do 
 
 
-  match '/users/image_cache',:to=>'users#image_cache', :requirements => { :cache_id => /\d{8}-\d{4}-\d{5}-\d{4}/, :filename => /[a-zA-Z0-9_ ]+\.(jpg|jpeg|png|gif){1}/i } 
+ 
 
   resources :conversations do
     resources :comments
