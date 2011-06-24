@@ -1,6 +1,6 @@
 class Attachment < ActiveRecord::Base
 belongs_to:user
-attr_accessible :course ,:user_id
+attr_accessible :course 
 acts_as_voteable 
  def uploaded_file=(incoming_file)
         self.filename = incoming_file.original_filename

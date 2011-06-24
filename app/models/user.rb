@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
    attr_accessor :password
 attr_accessible :name, :email, :password, :password_confirmation,:rollno,:department,:cn1,
-:cn2,:cn3,:cn4,:cn5,:cn6,:cn7, :image, :remote_image_url,:id
+:cn2,:cn3,:cn4,:cn5,:cn6,:cn7, :image, :remote_image_url
 
 mount_uploader :image, ImageUploader
 has_many :attachments
