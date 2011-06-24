@@ -5,6 +5,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or ImageScience support:
   include CarrierWave::RMagick
   # include CarrierWave::ImageScience
+ def cache_dir
+"#{RAILS_ROOT}/tmp/uploads"
+end
 
   # Choose what kind of storage to use for this uploader:
   storage :file
