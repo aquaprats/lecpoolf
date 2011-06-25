@@ -60,7 +60,7 @@ match '/attachments/index8',:to=>'attachments#index8'
 
 
 resources :sessions, :only => [:new, :create, :destroy]
-match 'attachments/:id/file',:to=>'attachments#me'
+match 'attachments/:filename',:to=>'attachments#me'
 match '/users/:id/course1', :to=>'users#course1'
 match '/users/:id/course2', :to=>'users#course2'
 match '/users/:id/course3', :to=>'users#course3'
