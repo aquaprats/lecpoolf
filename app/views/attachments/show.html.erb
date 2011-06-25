@@ -26,9 +26,9 @@
 <%end%>
 <%end%>
 <b><%=a%> dislikes!</b><br /><br />
-<% z=t.filename.split('.') %>
-<% x=z.last %>
-<% if x=="pdf" %>
+
+
+
 <script type="text/javascript" src='http://www.scribd.com/javascripts/view.js'></script>
 
 <div id='embedded_flash' >
@@ -44,15 +44,15 @@ var oniPaperReady = function(e){
 
 scribd_doc.addEventListener( 'iPaperReady', oniPaperReady );
 scribd_doc.addParam('jsapi_version', 1);
-scribd_doc.addParam('height', 600);
-scribd_doc.addParam('width', 400);
+scribd_doc.addParam('height', 780);
+scribd_doc.addParam('width', 600);
 scribd_doc.addParam('page', 10);
 scribd_doc.addParam('public', true);
 
 scribd_doc.write('embedded_flash');
 </script>
 
-<%end%>
+
 
 <%end%>
 
