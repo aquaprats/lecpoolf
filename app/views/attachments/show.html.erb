@@ -9,7 +9,7 @@
 <h3>Files:</h3>
 <%Attachment.all.each do |t|%>
 <%a=0%>
-<a href ="/attachments/<%=t.filename%>"<%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href ="/attachments/<%=t.filename%>"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/attachments/<%=t.id%>/vote_up/" data-method="post" rel="nofollow"><br/><img src="/images/thumbs_up.png" />&nbsp;&nbsp;</a>
 
 <%Vote.all.each do |f|%>
