@@ -5,8 +5,8 @@
 </div>
 
 <script type="text/javascript">
-<%z=2%>
-var scribd_doc = scribd.Document.getDocFromUrl('http://lecpool-iitk.heroku.com/attachments/<%=z%>/file', 'pub-73569908783260757009');
+
+var scribd_doc = scribd.Document.getDocFromUrl('http://lecpool-iitk.heroku.com/attachments/<%=@t.id%>/file', 'pub-73569908783260757009');
 
 var oniPaperReady = function(e){
 // scribd_doc.api.setPage(3);
