@@ -9,7 +9,7 @@
 <h3>Files:</h3>
 <%Attachment.all.each do |t|%>
 <%a=0%>
-<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href ="/attachments/<%=t.filename%><%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="/attachments/<%=t.id%>/vote_up/" data-method="post" rel="nofollow"><br/><img src="/images/thumbs_up.png" />&nbsp;&nbsp;</a>
 
 <%Vote.all.each do |f|%>
@@ -29,7 +29,7 @@
 <% z=t.filename.split('.') %>
 <% x=z.last %>
 <% if x=="pdf" %>
-<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Flecpool-iitk.heroku.com%2Fattachments%2F<%=t.id%>%2Ffile&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Flecpool-iitk.heroku.com%2Fattachments%2F<%=t.filename%>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
 <%end%>
 
 <%end%>
