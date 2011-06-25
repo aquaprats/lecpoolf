@@ -1,5 +1,9 @@
 class AttachmentsController < ApplicationController
 
+def view
+t=Attachment.find(params[:id])
+end
+
 def new
  @attachment = Attachment.new
 end 

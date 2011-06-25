@@ -1,0 +1,22 @@
+<script type="text/javascript" src='http://www.scribd.com/javascripts/view.js'></script>
+
+<div id='embedded_flash' >
+<a href='http://www.scribd.com'>Scribd</a>
+</div>
+
+<script type="text/javascript">
+var scribd_doc = scribd.Document.getDocFromUrl('http://lecpool-iitk.heroku.com/attachments/<%=t.id%>/file', 'pub-73569908783260757009');
+
+var oniPaperReady = function(e){
+// scribd_doc.api.setPage(3);
+}
+
+scribd_doc.addEventListener( 'iPaperReady', oniPaperReady );
+scribd_doc.addParam('jsapi_version', 1);
+scribd_doc.addParam('height', 780);
+scribd_doc.addParam('width', 600);
+scribd_doc.addParam('page', 10);
+scribd_doc.addParam('public', true);
+
+scribd_doc.write('embedded_flash');
+</script>
