@@ -1,5 +1,7 @@
 <li>
-<%= image_tag user.image_url(:thumb) if user.image? %>
+
+<%= gravatar_for @user %>
+
 Name: <strong><%= link_to user.name, user %></strong>
 <% if current_user.admin? %>
  | <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
