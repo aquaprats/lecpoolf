@@ -3,6 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake/dsl_definition'
+require 'rake/file_utils'
 require 'rake'
 module ::Sampleapp
   class Application
