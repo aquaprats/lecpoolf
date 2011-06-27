@@ -9,7 +9,7 @@
 <strong><%=a%> Matching Results Found!</strong><br /><br />
 <%@attachments.each do |t|%>
 <%if t.course==current_user.cn4%>
-<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a>  | Posted By:<%=t.user.name%><br />
+<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a>  | Posted By:<%=t.user.name%> |
 <%if t.content_type=="image/jpeg"||t.content_type=="image/png"||t.content_type=="image/jpg"||t.content_type=="image/gif"||t.content_type=="image/tif"%>
 <a href="/attachments/<%=t.id%>/file/view1">View</a><br/>
 <%else%>

@@ -16,6 +16,11 @@
 
 <%a=0%>
 <a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%if t.content_type=="image/jpeg"||t.content_type=="image/png"||t.content_type=="image/jpg"||t.content_type=="image/gif"||t.content_type=="image/tif"%>
+<a href="/attachments/<%=t.id%>/file/view1">View</a><br/>
+<%else%>
+<a href="/attachments/<%=t.id%>/file/view">View</a><br/>
+<%end%>
 <a href="/attachments/<%=t.id%>/vote_up7/" data-method="post" rel="nofollow"><br/><img src="/images/thumbs_up.png" />&nbsp;&nbsp;</a>
 
 <%Vote.all.each do |f|%>
