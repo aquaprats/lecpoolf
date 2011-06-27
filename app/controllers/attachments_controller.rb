@@ -10,8 +10,13 @@ end
   
 def me 
 a = Attachment.find(params[:id])
-send_data   a.data, :filename => a.filename, :type => a.content_type
+send_data   a.data, :filename => a.filename, :type => a.content_type 
     end
+def me1 
+a = Attachment.find(params[:id])
+send_data   a.data, :filename => a.filename, :type => a.content_type ,:disposition => 'inline'
+    end
+
 def vote_up
     begin
       current_user.vote_for(@attachment = Attachment.find(params[:id]))

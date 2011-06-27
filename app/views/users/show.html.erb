@@ -12,6 +12,7 @@
 
 <table class="microposts" summary="User microposts">
 <% Attachment.all.reverse.each do |t| %>
+<%if current_user.cn1==t.course ||current_user.cn2==t.course ||current_user.cn3==t.course ||current_user.cn4==t.course ||current_user.cn5==t.course ||current_user.cn6==t.course||current_user.cn7==t.course%>  
 <%user=User.find(t.user_id)%>
 <%name=user.name%>
 <% s1=" uploaded a file called " %>
@@ -22,6 +23,7 @@
 <span class="timestamp">Posted <%= time_ago_in_words(t.created_at) %> ago.</span>
 </td>
 </tr>
+<%end%>
 <%end%>
 </table>
 
