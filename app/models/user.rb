@@ -7,11 +7,12 @@ attr_accessible :name, :email, :password, :password_confirmation,:rollno,:depart
 :cn2,:cn3,:cn4,:cn5,:cn6,:cn7, :image, :remote_image_url
 
 mount_uploader :image, ImageUploader
-has_many :attachments
-has_many :videos
-has_many :forums
-has_many :conversations
-has_many :comments
+has_many :attachments,:dependent => :destroy
+has_many :videos,:dependent => :destroy
+has_many :forums,:dependent => :destroy
+has_many :conversations,:dependent => :destroy
+has_many :comments,:dependent => :destroy
+
 
 acts_as_voter
 

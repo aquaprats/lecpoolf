@@ -212,7 +212,7 @@ def index8
 
     def create      
         return if params[:attachment].blank?
-
+       
        @attachment = Attachment.new
         @attachment.course=params[:attachment][:course]
         @attachment.uploaded_file = params[:a]

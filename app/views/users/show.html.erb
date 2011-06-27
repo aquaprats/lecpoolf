@@ -1,28 +1,34 @@
 <table class="profile" summary="Profile information">
 <tr>
-
-
-
-
-
-
 <td class="main">
 
-
-
 <h1>
-
-
-<%= gravatar_for @user %>
-
+<%= gravatar_for @user %><%="  	      "%><%= @user.name %></font></b><br />
 </h1>
+
+
+
+<strong><font size="4"><b>Department: </strong> <%= @user.department %></font></b><br /><br/>
+
+<table class="microposts" summary="User microposts">
+<% Attachment.all.reverse.each do |t| %>
+<%user=User.find(t.user_id)%>
+<%name=user.name%>
+<% s1=" uploaded a file called " %>
+<% s2=" belonging to Course: "%>
+<tr>
+<td class="feed">
+<span class="content"><strong><%=name%></strong><%=s1%><strong><%=t.filename%></strong><%=s2%><strong><%=t.course%></strong></span><br/>
+<span class="timestamp">Posted <%= time_ago_in_words(t.created_at) %> ago.</span>
 </td>
-<td class="sidebar" >
-<strong> <font size="4"><b>Name: </strong> <%= @user.name %></font></b><br />
+</tr>
+<%end%>
+</table>
 
+</td>
+<td class="sidebar round" >
 <strong><font size="4"><b>Roll No: </strong> <%= @user.rollno %></font></b><br />
-<strong><font size="4"><b>Department: </strong> <%= @user.department %></font></b><br />
-
+<strong><font size="4"><b>Uploads:</strong><%= @user.attachments.count %></font></b><br/>
 <strong><font size="4"><b>Courses: </strong> </font></b>
 
 <a href="/users/<%=params[:id]%>/edit">To Add or Change a course click Here !</a><br />

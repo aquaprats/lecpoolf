@@ -88,6 +88,62 @@ margin-right: auto;
 footer nav {
 float: none;
 }
+table.profile {
+width: 100%;
+margin-bottom: 0;
+}
+td.main {
+width: 70%;
+padding: 1em;
+}
+td.sidebar {
+width: 30%;
+padding: 1em;
+vertical-align: top;
+background: #ffc;
+}
+.profile img.gravatar {
+border: 1px solid #999;
+margin-bottom: -15px;
+}
+div.field, div.actions {
+margin-bottom: 10px;
+}
+.field_with_errors {
+margin-top: 10px;
+padding: 2px;
+background-color: red;
+display: table;
+}
+.field_with_errors label {
+color: #fff;
+}
+#error_explanation {
+width: 400px;
+border: 2px solid red;
+padding: 7px;
+padding-bottom: 12px;
+margin-bottom: 20px;
+background-color: #f0f0f0;
+}
+#error_explanation h2 {
+text-align: left;
+font-weight: bold;
+padding: 5px 5px 5px 15px;
+font-size: 12px;
+margin: -7px;
+background-color: #c00;
+color: #fff;
+}
+#error_explanation p {
+color: #333;
+margin-bottom: 0;
+padding: 5px;
+}
+#error_explanation ul li {
+font-size: 12px;
+list-style: square;
+}
 ul.users {
 margin-top: 1em;
 }
@@ -101,3 +157,42 @@ list-style: none;
   background: #EFEFEF;																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		
   border-radius: 5px;
 }
+h1.feed {
+margin-bottom: 0.3em;
+}
+table.feeds {
+margin-top: 1em;
+}
+table.feeds tr {
+height: 70px;
+}
+table.feeds tr td.gravatar {
+border-top: 1px solid #ccc;
+vertical-align: top;
+width: 50px;
+}
+table.feeds tr td.feed {
+border-top: 1px solid #ccc;
+vertical-align: top;
+padding-top: 10px;
+}
+table.feeds tr td.feed span.timestamp {
+display: block;
+font-size: 85%;
+color: #666;
+}
+div.user_info img {
+padding-right: 0.1em;
+}
+div.user_info a {
+text-decoration: none;
+}
+div.user_info span.user_name {
+position: absolute;
+}
+div.user_info span.feeds {
+font-size: 80%;
+}
+
+
+
