@@ -1,3 +1,10 @@
+<%= form_tag videos_search2_path, :html => {:method => :get} do |f| %>
+<%= text_field_tag :title_contains %>
+<%= submit_tag "Search By Video Name", :class => "search-button", :name => "submit", :id => 'search_submit' %>
+<% end %>
+
+
+
 <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Upload a Youtube Video",videos_create_path%>
 </h2>
 

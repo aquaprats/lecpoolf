@@ -170,49 +170,55 @@ def show
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
-    # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+    @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index2
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
-    # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+    @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index3
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+    @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index4
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+     @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index5
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+    @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index6
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
-  end
+ @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate? 
+ end
 def index7
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+ @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index8
     @search = Attachment.search(params[:search])
     @attachments = @search.all   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+ @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 
     def create      

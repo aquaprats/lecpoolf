@@ -29,6 +29,13 @@ def new
  @video = Video.new
 end 
 
+def search2
+    @search2 = Video.search(params[:search])
+    @videos = @search2.all   # load all matching records
+    # @articles = @search.relation # Retrieve the relation, to lazy-load in view
+    # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+    @videos = @search2.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+  end
 
  def create      
         return if params[:video].blank?

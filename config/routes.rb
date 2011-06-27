@@ -55,7 +55,7 @@ match '/attachments/index6',:to=>'attachments#index6'
 match '/attachments/index7',:to=>'attachments#index7'
 match '/attachments/index8',:to=>'attachments#index8'
 
-
+match '/videos/search2',:to=>'videos#search2'
 
 
 
