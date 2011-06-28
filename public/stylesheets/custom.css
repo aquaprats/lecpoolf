@@ -1,7 +1,9 @@
 .container {
 width: 700px;
 }
-body {background-image:url('../images/11111.jpg');
+body {background-image:url('../images/2.jpg');
+  background-size:100% 100%;
+-moz-background-size:100% 100%; /* Firefox 3.6 */
  background-repeat:no-repeat;
  background-attachment:fixed;
 }
