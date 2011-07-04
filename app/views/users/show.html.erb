@@ -33,8 +33,8 @@
    <%= text_field_tag 'search[filename_contains]' %>
     <%= submit_tag "Search Notes", :class => "search-button", :name => "submit", :id => 'search_submit' %>
 <% end %>
-<strong><font size="4"><b>View : <a href="/attachments/show" >NOTES | </a><a href="/videos"> VIDEO </a></font></b><br />
-<strong><font size="4"><b>Upload : <a href ="/attachments/create">NOTES | </a><a href="/videos/create"> VIDEO </a></font></b><br/><br/>
+<strong><font size="4"><b>View : <a href="/attachments/show" >NOTES </a>| <a href="/videos"> VIDEO </a></font></b><br />
+<strong><font size="4"><b>Upload : <a href ="/attachments/create">NOTES </a>|<a href="/videos/create"> VIDEO </a></font></b><br/><br/>
 <strong><font size="4"><b>Roll No: </strong> <%= @user.rollno %></font></b><br />
 <strong><font size="4"><b>Uploads:</strong><%= @user.attachments.count %></font></b><br/>
 <strong><font size="4"><b>Courses: </strong> </font></b>
