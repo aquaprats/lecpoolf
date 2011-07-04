@@ -229,11 +229,11 @@ def index8
         @attachment.uploaded_file = params[:a]
         @attachment.user_id=current_user.id
         if @attachment.save
-            flash[:notice] = "Thank you for your submission..."
+            flash[:notice] = "Thank you for uploading."
             redirect_to :action => "show"
         else
-            flash[:error] = "There was a problem submitting your attachment."
-            render :action => :new
+            flash[:error] = "There was a problem submitting your notes."
+            render :action => "create"
         end
     end
 end
