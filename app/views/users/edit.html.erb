@@ -2,23 +2,16 @@
 <%= form_for @user,:html => {:multipart => true} do |f| %>
 <%= render 'shared/error_messages', :object => f.object %>
 
-<div class="field">
-<%= f.label :email %><br />
-<%= f.text_field :email %>
-</div>
+
 <div class="field">
 <%= f.label :password %><br />
 <%= f.password_field :password %>
 </div>
-<div class="field">
-<%= f.label :password_confirmation, "Confirmation" %><br />
-<%= f.password_field :password_confirmation %>
-</div>
 
 
 
 <div class="field">
-<%= f.label :cn1, "Course No.1" %><br />
+<%= f.label :cn1, "Course No.1  (Note: Use small case and don't put a space in b/w . Eg: cs100)" %><br />
 <%= f.text_field :cn1 %>
 </div>
 <div class="field">

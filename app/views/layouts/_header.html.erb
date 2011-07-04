@@ -14,22 +14,22 @@
 
 
 <% if signed_in? %>
-<li><%= link_to "Users", users_path %></li>
-<li><%= link_to "Profile", current_user %></li>
+<li><%= link_to "USERS", users_path %></li>
+<li><%= link_to "PROFILE", current_user %></li>
 
-<li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
-<li><%= link_to "Videos",videos_path%></li>
+<li><%= link_to "EDIT PROFILE", edit_user_path(current_user) %></li>
+<li><%= link_to "VIDEOS",videos_path%></li>
 
 <% end %>
 
 <% if signed_in? %>
-<li><%= link_to "Upload", attachments_create_path  %></li>
-<li><%= link_to "Forum", forums_path %></li>
+<li><%= link_to "UPLOAD", attachments_create_path  %></li>
+<li><%= link_to "FORUM", forums_path %></li>
 
-<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+<li><%= link_to "SIGN OUT", signout_path, :method => :delete %></li>
 <% else %>
-<li><%= link_to "Home", root_path %></li>
-<li><%= link_to "Sign in", signin_path %></li>
+<li><%= link_to "HOME", root_path %></li>
+<li><%= link_to "SIGN IN", signin_path %></li>
 <% end %>
 
 

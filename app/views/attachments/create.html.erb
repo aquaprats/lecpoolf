@@ -1,5 +1,5 @@
-<%= link_to "Show All Uploaded Files",attachments_show_path %>
 
+<h1>Notes Upload :</h1>
 <% form_tag 'create', :multipart => true do %>
 Course:<br />
 
@@ -7,7 +7,22 @@ Course:<br />
 
 
     <%= file_field_tag 'a' %>
-    <%= submit_tag "Send Attachment" %>
+    <%= submit_tag "Upload Notes" %>
+
+<% end %><br/>
+
+<h1>Video Upload:</h1>
+<% form_tag 'create', :multipart => true do %>
+Title:<br />
+
+<input id="video_title" name="video[title]" type="text" /><br />
+
+
+   Youtube Video link:<br/>
+<input id="video_video_code" name="video[video_code]" type="text" /><br />
+
+    <%= submit_tag "Upload Video" %>
 
 <% end %>
+
 

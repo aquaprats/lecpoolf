@@ -3,7 +3,7 @@
 <td class="main">
 
 <h1>
-<%= gravatar_for @user %><%="  	      "%><%= @user.name %></font></b><br />
+<%= gravatar_for @user %><%="  	      "%><%= @user.name %></b><br />
 </h1>
 
 
@@ -32,12 +32,14 @@
 <%= form_tag attachments_index_path, :html => {:method => :get} do |f| %>
    <%= text_field_tag 'search[filename_contains]' %>
     <%= submit_tag "Search Notes", :class => "search-button", :name => "submit", :id => 'search_submit' %>
-<% end %><br/>
+<% end %>
+<strong><font size="4"><b>View : <a href="/attachments/show" >NOTES | </a><a href="/videos"> VIDEO </a></font></b><br />
+<strong><font size="4"><b>Upload : <a href ="/attachments/create">NOTES | </a><a href="/videos/create"> VIDEO </a></font></b><br/><br/>
 <strong><font size="4"><b>Roll No: </strong> <%= @user.rollno %></font></b><br />
 <strong><font size="4"><b>Uploads:</strong><%= @user.attachments.count %></font></b><br/>
 <strong><font size="4"><b>Courses: </strong> </font></b>
 
-<a href="/users/<%=params[:id]%>/edit">To Add or Change a course click Here !</a><br />
+<a href="/users/<%=params[:id]%>/edit">ADD/CHANGE</a><br />
 <font size="4"><a href="/users/<%=params[:id]%>/course1"><%=@user.cn1%></a></font><br />
 
 <font size="4"><a href="/users/<%=params[:id]%>/course2"><%=@user.cn2%></a> </font><br />
