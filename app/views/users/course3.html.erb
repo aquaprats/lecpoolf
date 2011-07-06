@@ -1,26 +1,28 @@
+<table class="profile" summary="Profile information">
+<tr>
+<td class="main">
+
+<h1><strong><%=current_user.cn3.upcase%> : All Documents</strong></h1>
 
 
-<h1><strong><%=current_user.cn3%></strong></h1>
 
-
- <%= form_tag attachments_index4_path, :html => {:method => :get} do |f| %>
-   <%= text_field_tag 'search[filename_contains]' %>
-    <%= submit_tag "Search By Filename", :class => "search-button", :name => "submit", :id => 'search_submit' %>
-
-  <% end %>
 <br />
-
+<table class="microposts" summary="User microposts">
 <%Attachment.all.each do |t|%>
 
 <%if current_user.cn3==t.course%>
 
 <%a=0%>
-<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<tr>
+<td class="feed">
+<span class="content"><a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%><br/> Category:<%=t.category%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <%if t.content_type=="image/jpeg"||t.content_type=="image/png"||t.content_type=="image/jpg"||t.content_type=="image/gif"||t.content_type=="image/tif"%>
 <a href="/attachments/<%=t.id%>/file/view1">View</a><br/>
 <%else%>
 <a href="/attachments/<%=t.id%>/file/view">View</a><br/>
 <%end%>
+
 <%Vote.all.each do |f|%>
 <%if f.voteable_id==t.id && f.voteable_type=="Attachment" && f.vote%>
 <%a=a+1%>
@@ -38,8 +40,33 @@
 <%end%>
 <%end%>
 <b><font size="6"><%=a%></font></b>
-<a href="/attachments/<%=t.id%>/vote_down3/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;</a><br/><br/>
+<a href="/attachments/<%=t.id%>/vote_down3/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;</a><br/>
 
 <%end%>
 <%end%>
+</td>
+</tr>
+</table>
+</td>
+<td class="sidebar round" >
+ <%= form_tag attachments_index4_path, :html => {:method => :get} do |f| %>
+   <%= text_field_tag 'search[filename_contains]' %>
+    <%= submit_tag "Search By Filename", :class => "search-button", :name => "submit", :id => 'search_submit' %>
 
+  <% end %><br/>
+
+
+<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course3l" >Lecture Notes</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course3a" >Assignments</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course3q" >Quiz Papers</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course3e" >Exam Papers</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course3v" >Videos</a></font></b><br /><br/>
+
+
+
+
+
+
+</td>
+</tr>
+</table>

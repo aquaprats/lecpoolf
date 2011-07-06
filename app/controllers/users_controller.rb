@@ -8,21 +8,135 @@ def course1
 
 end
 
+def course1l
+
+end
+def course1a
+
+end
+def course1q
+
+end
+def course1e
+
+end
+def course1v
+
+end
+
+
 def course2
 
 end
+def course2l
+
+end
+def course2a
+
+end
+def course2q
+
+end
+def course2e
+
+end
+def course2v
+
+end
+
 def course3
 
 end
+
+def course3l
+
+end
+def course3a
+
+end
+def course3q
+
+end
+def course3e
+
+end
+def course3v
+
+end
+
 def course4
+end
+
+def course4l
+
+end
+def course4a
+
+end
+def course4q
+
+end
+def course4e
+
+end
+def course4v
+
 end
 def course5
 
 end
+
+def course5l
+
+end
+def course5a
+
+end
+def course5q
+
+end
+def course5e
+
+end
+def course5v
+
+end
 def course6
 end
+def course6l
+
+end
+def course6a
+
+end
+def course6q
+
+end
+def course6e
+
+end
+def course6v
+
+end
+
 
 def course7
+end
+
+def course7l
+
+end
+def course7a
+
+end
+def course7q
+
+end
+def course7e
+
+end
+def course7v
+
 end
 
 def index

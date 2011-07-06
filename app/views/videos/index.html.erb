@@ -7,7 +7,7 @@
 
 
 <%Video.all.each do |t| %>
-<% a=t.video_code.split('/').last%>
+<% x=t.video_code.split('/').last%>
 <% b=t.video_code.split('/')%>
 <%c=b[2]%>
 <%if c=="youtu.be" %>
@@ -35,7 +35,7 @@
 <br/><br/>
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe width="760" height="449" src="http://youtube.com/embed/<%=a%>" frameborder="0" allowfullscreen></iframe><br/><br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe width="760" height="449" src="http://youtube.com/embed/<%=x%>" frameborder="0" allowfullscreen></iframe><br/><br/><br/>
 
 <%end%>
 

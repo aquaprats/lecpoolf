@@ -35,15 +35,32 @@
 <% end %><br/>
 
 <% form_tag attachments_create_path, :multipart => true do %>
-Course:<br />
+<b>Course:</b><br />
 
 <input id="attachment_course" name="attachment[course]" type="text" /><br />
+
+<div class="field">
+<label for="attachment_category">Category:</label><br />
+
+<select id="attachment_category" name="attachment[category]">
+  <option value="Lecture Notes">Lecture Notes</option>
+  <option value="Assignment">Assignment</option>
+  <option value="Quiz">Quiz</option>
+  <option value="Exam Paper">Exam Paper</option>
+  
+  
+
+
+</div>
+
+</select>
+
 
 
     <%= file_field_tag 'a' %>
     <%= submit_tag "Upload Notes" %>
 
-<% end %><br/>
+<% end %><br/><br/>
 <strong><font size="4"><b>View : <a href="/attachments/show" >NOTES </a>| <a href="/videos"> VIDEO </a></font></b><br />
 <strong><font size="4"><b>Upload : <a href="/videos/create" >VIDEO </a></font></b><br /><br/>
 <strong><font size="4"><b>Roll No: </strong> <%= @user.rollno %></font></b><br />

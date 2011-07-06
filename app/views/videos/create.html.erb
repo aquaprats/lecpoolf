@@ -1,10 +1,15 @@
 <% form_tag 'create', :multipart => true do %>
-Title:<br />
+<b>Course:</b><br />
+
+<input id="video_course" name="video[course]" type="text" /><br />
+
+
+<b>Video Title:</b><br />
 
 <input id="video_title" name="video[title]" type="text" /><br />
 
 
-   Youtube Video link:<br/>
+   <b>Youtube Share link:</b><br/>
 <input id="video_video_code" name="video[video_code]" type="text" /><br />
 
     <%= submit_tag "Upload Video" %>

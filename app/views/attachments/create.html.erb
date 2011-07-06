@@ -1,24 +1,45 @@
 
-<h1>Notes Upload :</h1>
+<h1>Documents Upload:</h1>
 <% form_tag 'create', :multipart => true do %>
-Course:<br />
+<b>Course:</b><br />
 
 <input id="attachment_course" name="attachment[course]" type="text" /><br />
 
 
-    <%= file_field_tag 'a' %>
-    <%= submit_tag "Upload Notes" %>
+<div class="field">
+<label for="attachment_category">Category:</label><br />
 
-<% end %><br/>
+<select id="attachment_category" name="attachment[category]">
+  <option value="Lecture Notes">Lecture Notes</option>
+  <option value="Assignment">Assignment</option>
+  <option value="Quiz">Quiz</option>
+  <option value="Exam Paper">Exam Paper</option>
+  
+  
+
+
+</div>
+
+</select>
+
+
+    <%= file_field_tag 'a' %>
+    <%= submit_tag "Upload Document" %>
+
+<% end %><br/><br/>
 
 <h1>Video Upload:</h1>
-<% form_tag 'create', :multipart => true do %>
-Title:<br />
+<% form_tag videos_create_path, :multipart => true do %>
+<b>Course:</b><br />
+
+<input id="video_course" name="video[course]" type="text" /><br />
+
+<b>Video Title:</b><br />
 
 <input id="video_title" name="video[title]" type="text" /><br />
 
 
-   Youtube Video link:<br/>
+   <b>Youtube Share link:</b><br/>
 <input id="video_video_code" name="video[video_code]" type="text" /><br />
 
     <%= submit_tag "Upload Video" %>

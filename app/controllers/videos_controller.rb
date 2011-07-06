@@ -22,6 +22,133 @@ def vote_down
     end
   end
 
+def vote_up1v
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course1v' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course1v'
+    end
+  end
+def vote_down1v
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course1v'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course1v'
+    end
+  end
+def vote_up2v
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course2v' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course2v'
+    end
+  end
+def vote_down2v
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course2v'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course2v'
+    end
+  end
+def vote_up3v
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course3v' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course3v'
+    end
+  end
+def vote_down3v
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course3v'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course3v'
+    end
+  end
+def vote_up4v
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course4v' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course4v'
+    end
+  end
+def vote_down4v
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course4v'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course4v'
+    end
+  end
+def vote_up5v
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course5v' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course5v'
+    end
+  end
+def vote_down5v
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course5v'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course5v'
+    end
+  end
+def vote_up6v
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course6v' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course6v'
+    end
+  end
+def vote_down6v
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course6v'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course6v'
+    end
+  end
+def vote_up7v
+    begin
+      current_user.vote_for(@video = Video.find(params[:id]))
+
+         redirect_to :controller => 'users', :action => 'course7v' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course7v'
+    end
+  end
+def vote_down7v
+    begin
+      current_user.vote_against(@video = Video.find(params[:id]))
+
+      redirect_to :controller => 'users', :action => 'course7v'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course7v'
+    end
+  end
+
 def index
 end
 
@@ -41,6 +168,7 @@ def search2
         return if params[:video].blank?
 
        @video = Video.new
+        @video.course=params[:video][:course]
         @video.title=params[:video][:title]
         @video.video_code = params[:video][:video_code]
         @video.user_id=current_user.id
