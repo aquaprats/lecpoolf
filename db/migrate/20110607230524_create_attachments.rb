@@ -6,6 +6,7 @@ class CreateAttachments < ActiveRecord::Migration
            t.column :data, :binary
            t.column :user_id, :integer
            t.column :course, :string
+           t.column :category,:string
            t.timestamps
     end
 add_index :attachments, :user_id  

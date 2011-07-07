@@ -4,6 +4,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :title
       t.string :video_code
       t.integer :user_id
+      t.string :course
 
       t.timestamps
     end

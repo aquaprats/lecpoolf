@@ -13,11 +13,14 @@
 ActiveRecord::Schema.define(:version => 20110616140925) do
 
   create_table "attachments", :force => true do |t|
-    t.string  "filename"
-    t.string  "content_type"
-    t.binary  "data"
-    t.integer "user_id"
-    t.string  "course"
+    t.string   "filename"
+    t.string   "content_type"
+    t.binary   "data"
+    t.integer  "user_id"
+    t.string   "course"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "attachments", ["user_id"], :name => "index_attachments_on_user_id"
@@ -80,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20110616140925) do
     t.string   "title"
     t.string   "video_code"
     t.integer  "user_id"
+    t.string   "course"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

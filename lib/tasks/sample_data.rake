@@ -27,4 +27,4 @@ And Engineering"
 admin1.toggle!(:admin)
 admin1.toggle!(:activated)
 end
-end
+
