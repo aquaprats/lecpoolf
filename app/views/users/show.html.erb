@@ -34,7 +34,7 @@
     <%= submit_tag "Search Notes", :class => "search-button", :name => "submit", :id => 'search_submit' %>
 <% end %><br/>
 
-<% form_tag attachments_create_path, :multipart => true do %>
+<%= form_tag attachments_create_path, :multipart => true do %>
 <b>Course:</b><br />
 
 <input id="attachment_course" name="attachment[course]" type="text" /><br />
@@ -61,8 +61,8 @@
     <%= submit_tag "Upload Notes" %>
 
 <% end %><br/><br/>
-<strong><font size="4"><b>View : <a href="/attachments/show" >NOTES </a>| <a href="/videos"> VIDEO </a></font></b><br />
-<strong><font size="4"><b>Upload : <a href="/videos/create" >VIDEO </a></font></b><br /><br/>
+<strong><font size="4"><b>View : </strong></font><a href="/attachments/show" >NOTES </a>| <a href="/videos"> VIDEO </a></b><br />
+<strong><font size="4"><b>Upload : </strong></font><a href="/videos/create" >VIDEO </a></b><br /><br/>
 <strong><font size="4"><b>Roll No: </strong> <%= @user.rollno %></font></b><br />
 <strong><font size="4"><b>My Uploads:</strong><%= @user.attachments.count %></font></b><br/>
 <strong><font size="4"><b>Courses: </strong> </font></b>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 before_filter :authenticate, :only => [ :index,:edit,:update]
 before_filter :correct_user, :only => [:edit, :update]
-before_filter :admin_user, :only => :destroy
+before_filter :admin_user, :only =>:destroy
 
 
 def course1
@@ -177,7 +177,7 @@ end
 
 
 
- def delete
+ def deleteu
 		
 			@user=User.find(params[:id])
 			if @user == nil
@@ -222,8 +222,10 @@ else
 render 'edit'
 end
 end
+
 def destroy
 User.find(params[:id]).destroy
+
 flash[:success] = "User destroyed."
 redirect_to users_path
 end

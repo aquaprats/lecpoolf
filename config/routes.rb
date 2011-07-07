@@ -1,7 +1,8 @@
 Sampleapp::Application.routes.draw do 
 
 
- 
+  
+  resources :users
 
   resources :conversations do
     resources :comments
@@ -12,9 +13,8 @@ Sampleapp::Application.routes.draw do
   end
   
 
-  resources :users
   
-
+ 
 match'/videos',:to=>'videos#index'
   
 match '/videos/create',:to=>'videos#create'
@@ -25,6 +25,7 @@ match '/videos/:id/vote_down/', :to=>'videos#vote_down'
 
   
  post "attachments/create"
+
 
 match '/attachments/:id/vote_up1/', :to=>'attachments#vote_up1'
 match '/attachments/:id/vote_down1/', :to=>'attachments#vote_down1'
@@ -182,7 +183,7 @@ match '/users/:id/course7q', :to=>'users#course7q'
 match '/users/:id/course7a', :to=>'users#course7a'
 match '/users/:id/course7v', :to=>'users#course7v'
 match '/users/:id/course7e', :to=>'users#course7e'
-match '/users/:id/delete' , :to=>'users#delete'
+
     
   match '/developers', :to=>'pages#developers'
 
@@ -191,6 +192,7 @@ match '/about', :to=>'pages#about'
 match '/help', :to=>'pages#help'
 match'/signup',:to=>'users#new'
 match'/users/:id/activate' , :to=>'users#activate'
+match'/users/:id/deleteu',:to=>'users#deleteu'
 
 match '/signin', :to => 'sessions#new'
 match '/signout', :to => 'sessions#destroy'
