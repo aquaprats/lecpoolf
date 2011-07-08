@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_filter :authenticate, :only => [ :index,:edit,:update]
+before_filter :authenticate, :only => [ :index,:edit,:update,:new_password]
 before_filter :correct_user, :only => [:edit, :update]
 before_filter :admin_user, :only =>:destroy
 
@@ -165,7 +165,7 @@ flash[:success] = "Welcome to lecpool!"
 redirect_to signin_path
 
 @user.send_activate
-flash[:notice] = "Signup successful. Activation e-mail has been sent"
+flash[:notice] = "Signup successful. Activation e-mail has been sent to your IIT-K email id."
 
 
 else
@@ -198,14 +198,40 @@ end
 				flash[:notice]="You have been activated and can now log in"
 				redirect_to signin_path
 			else
-				flash[:warning]="We could not activate you.  Send us email."
+				flash[:error]="We could not activate you.  Send us email."
 				redirect_to signin_path
 			end
     end
   
 
 
+def new_password
+		           @user=current_user
+			
+			if @user.update_attributes(:password=>params[:password], :password_confirmation => params[:password_confirmation])
+				flash[:success]="Password Changed"
+				redirect_to users_show_path
+			end
+		
+  end
 
+  def forgot_password
+		     if request.post?
+			u= User.find_by_email(params[:user][:email])
+			if u
+				if u.send_new_password
+					flash[:success]  = "A new password has been sent by email."
+					redirect_to  signin_path
+				else
+					flash[:error]  = "EMail address OK, but couldn't send password"
+					redirect_to  signin_path
+				end
+			else
+				flash[:error] = "No such email address on record"
+				redirect_to  signin_path
+			end
+		end
+  end
 
 
 def edit
@@ -215,7 +241,7 @@ end
 def update
 @user = User.find(params[:id])
 if @user.update_attributes(params[:user])
-flash[:success] = "Profile updated."
+flash[:success] = "Changes Successfuly Saved!"
 redirect_to @user
 else
 @title = "Edit user"

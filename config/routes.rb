@@ -2,7 +2,7 @@ Sampleapp::Application.routes.draw do
 
 
   
-  resources :users
+ 
 
   resources :conversations do
     resources :comments
@@ -13,7 +13,11 @@ Sampleapp::Application.routes.draw do
   end
   
 
-  
+  match '/users/new_password/',:to=>'users#new_password'
+
+ match '/users/forgot_password/',:to=>'users#forgot_password'
+
+ resources :users
  
 match'/videos',:to=>'videos#index'
   

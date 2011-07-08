@@ -59,12 +59,17 @@ def activate?
 	end
 
  
-
+def send_new_password
+		new_pass = User.random_string(10)
+		self.password = self.password_confirmation = new_pass
+		self.save
+		Notifications.deliver_forgot_password(self.email, new_pass)
+	end
 
 private
 def encrypt_password
 self.salt = make_salt if new_record?
-self.encrypted_password = encrypt(password) if new_record?
+self.encrypted_password = encrypt(password) 
 end
 def encrypt(string)
 secure_hash("#{salt}--#{string}")
@@ -75,5 +80,13 @@ end
 def secure_hash(string)
 Digest::SHA2.hexdigest(string)
 end
+def self.random_string(len)
+		#generat a random password consisting of strings and digits
+		chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+		newpass = ""
+		1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
+		return newpass
+	end
+
 end
    
