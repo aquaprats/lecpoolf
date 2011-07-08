@@ -1,7 +1,22 @@
 class CommentsController < ApplicationController
-  before_filter :load_forum_and_conversation
+  before_filter :load_forum_and_conversation,:except=>:vote_upcm
   before_filter :authenticate
+  
+  def vote_upcm
+    begin
+      current_user.vote_for(@comment = Comment.find(params[:id]))
+      @comment = Comment.find(params[:id])
+      @conversation = Conversation.find(@comment.conversation_id)
+       redirect_to @conversation
+       
+    rescue ActiveRecord::RecordInvalid
+     @comment = Comment.find(params[:id])
+      @conversation = Conversation.find(@comment.conversation_id)
+     redirect_to @conversation
+    end
+  end 
 
+  
   # GET /comments
   # GET /comments.xml
   def index
@@ -84,13 +99,8 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
-    def load_forum_and_conversation
-      @conversation = Conversation.find(params[:conversation_id])
-      @forum = @conversation.forum
-  
-   end
 
+   
 private
 def authenticate
 deny_access unless signed_in?
@@ -100,4 +110,12 @@ def correct_user
 @user = User.find(params[:id])
 redirect_to(root_path) unless current_user?(@user)
 end
+
+ def load_forum_and_conversation
+    
+      @conversation = Conversation.find(params[:conversation_id])
+      @forum = @conversation.forum
+  
+   end
+
 end

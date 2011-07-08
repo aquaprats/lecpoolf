@@ -4,6 +4,9 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
+    <th>Posted By</th>
+    <th>Comments</th>
+    
     <th></th>
     <th></th>
     <th></th>
@@ -11,9 +14,11 @@
 
 <% @conversations.each do |conversation| %>
   <tr>
-    <td>Question Title:<%= conversation.title %></td>
-    <td>Posted By:<%= conversation.user.name %></td>
-    <td>Description:<%= conversation.description %></td>
+    <td><%= conversation.title %></td>
+    
+    <td><%= conversation.description %></td>
+    <td><%= conversation.user.name %></td>
+    <td><%= conversation.comments.count%></td>
     <td><%= link_to 'Show', conversation %></td>
     <td><%= link_to 'Edit', edit_conversation_path(conversation) %></td>
     <td><%= link_to 'Destroy', conversation, :confirm => 'Are you sure?', :method => :delete %></td>

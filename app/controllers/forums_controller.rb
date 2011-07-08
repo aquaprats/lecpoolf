@@ -1,10 +1,21 @@
 class ForumsController < ApplicationController
 
 before_filter :authenticate
-
+before_filter :check, :only=>[:destroy,:edit]
 
   # GET /forums
   # GET /forums.xml
+   
+  def vote_upf
+    begin
+      current_user.vote_for(@forum = Forum.find(params[:id]))
+
+         redirect_to :controller => 'forums', :action => 'index' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'forums', :action => 'index'
+    end
+  end
+
   def index
     @forums = Forum.all
 
@@ -95,6 +106,16 @@ end
 def correct_user
 @user = User.find(params[:id])
 redirect_to(root_path) unless current_user?(@user)
+end
+
+def check
+@forum=Forum.find(params[:id])
+if current_user.id!=@forum.user_id
+flash[:error]="You are not authorized to edit/delete this forum !"
+redirect_to forums_path
+
+
+end
 end
 
 end

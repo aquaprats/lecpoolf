@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,8 +20,19 @@
   <div class="listing">
     <div class="class">Question Title: <%= link_to conversation.title, conversation_path(conversation) %></div>
     <div class="description">Posted By: <%= conversation.user.name %></div>
-    <div class="description">Description: <%= conversation.description %></div>
-  </div>
+    <div class="description">Description: <%= conversation.description %><p style="float:right;">Comments : <%=conversation.comments.count%></p></div>
+  
+
+
+<%d=0%>
+<%Vote.all.each do |f|%>
+<%if f.voteable_type=="Conversation" && f.voteable_id==conversation.id && f.vote%>
+<%d=d+1%>
+<%end%>
+<%end%>
+<b><font size="4"><%=d%></font></b>
+<a href="/conversations/<%=conversation.id%>/vote_upc/" data-method="post" rel="nofollow"><img src="/images/ts.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+</div>
   <% end %>
   <% end %>
 </div> <!-- div#conversations -->

@@ -2,6 +2,16 @@ class ConversationsController < ApplicationController
   #before_filter :load_forum, :except => [:show, :edit, :update]
   before_filter :load_forum
   before_filter :authenticate
+  
+  def vote_upc
+    begin
+      current_user.vote_for(@conversation = Conversation.find(params[:id]))
+
+        redirect_to @forum
+    rescue ActiveRecord::RecordInvalid
+     redirect_to  @forum
+    end
+  end 
 
   # GET /conversations
   # GET /conversations.xml

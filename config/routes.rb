@@ -22,8 +22,11 @@ match '/videos/:id/vote_up/', :to=>'videos#vote_up'
 match '/videos/:id/vote_down/', :to=>'videos#vote_down'
 
   get "attachments/show"
+match '/forums/:id/vote_upf/', :to=>'forums#vote_upf'
+match '/conversations/:id/vote_upc/', :to=>'conversations#vote_upc'
+match '/comments/:id/vote_upcm/', :to=>'comments#vote_upcm'
 
-  
+match '/forums/:id/conversations/',:to=>'conversations#index'  
  post "attachments/create"
 
 

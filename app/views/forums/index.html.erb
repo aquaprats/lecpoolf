@@ -1,14 +1,25 @@
+<title>Forum</title>
 <h1>Listing Forums</h1>
 
 <% @forums.each do |forum| %>
 <div class="listing">
   <div>Forum Title: <%= link_to forum.title, forum_path(forum) %></div>
   <div>Created by: <%=forum.user.name%></div>
-  <div>Description: <%= forum.description %></div>
-  <div class="actions" style="display:none">
-  <span><%= link_to 'Show', forum %></span>
-  <span><%= link_to 'Edit', edit_forum_path(forum) %></span>
-  <span><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></span>
+  <div>Description: <%= forum.description %><a href="/forums/<%=forum.id%>/conversations/" style="float:right;">List All Questions</a></div>
+<%d=0%>
+<%Vote.all.each do |f|%>
+<%if f.voteable_type=="Forum" && f.voteable_id==forum.id && f.vote%>
+<%d=d+1%>
+<%end%>
+<%end%>
+<b><font size="4"><%=d%></font></b>
+<a href="/forums/<%=forum.id%>/vote_upf/" data-method="post" rel="nofollow"><img src="/images/ts.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+
+  <div class="actions" >
+  <span></span>
+  <span><%= link_to 'Show |', forum %></span>
+  <span><%= link_to 'Edit |', edit_forum_path(forum) %></span>
+  <span><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %><p style="float:right;">Questions Posted : <%=forum.conversations.count%></p></span>
   </div>
 </div>
 <% end %>
