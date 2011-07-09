@@ -742,6 +742,15 @@ def index8
  @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 
+ def destroy
+    @attachment = Attachment.find(params[:id])
+    @attachment.destroy
+    flash[:success]="Document Deleted"
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.xml { head :ok }
+    end
+  end
     def create      
         return if params[:attachment].blank?
        

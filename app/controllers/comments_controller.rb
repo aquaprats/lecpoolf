@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :load_forum_and_conversation,:except=>:vote_upcm
+  before_filter :load_forum_and_conversation,:except=>[:vote_upcm,:destroy]
   before_filter :authenticate
   
   def vote_upcm
@@ -92,9 +92,10 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-
+     @conversation = Conversation.find(@comment.conversation_id)
+     flash[:success]="Comment Deleted"
     respond_to do |format|
-      format.html { redirect_to(comments_url) }
+      format.html { redirect_to(conversation_path(@conversation)) }
       format.xml { head :ok }
     end
   end

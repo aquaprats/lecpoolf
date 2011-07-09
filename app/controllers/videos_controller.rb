@@ -163,7 +163,15 @@ def search2
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
     @videos = @search2.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
-
+ def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+    flash[:success]="Video Deleted"
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.xml { head :ok }
+    end
+  end
  def create      
         return if params[:video].blank?
 
@@ -173,7 +181,7 @@ def search2
         @video.video_code = params[:video][:video_code]
         @video.user_id=current_user.id
         if @video.save
-            flash[:notice] = "Thank you for your submission...If video uploaded doesn't appear then you haven't provided a correct youtube link !"
+            flash[:notice] = "Thank you for your submission.If video doesn't appear then you haven't provided a correct youtube link !"
             redirect_to :action => "index"
         else
             flash[:error] = "All fields are required,  please check. If still it doesn't upload then this particular video has already been uploaded by someone else!"

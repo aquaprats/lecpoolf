@@ -22,7 +22,11 @@
 <%else%>
 <a href="/attachments/<%=t.id%>/file/view">View</a><br/>
 <%end%>
-
+<%if current_user.id==t.user_id %>
+<%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
+<%else%>
+<br/>
+<%end%>
 <%Vote.all.each do |f|%>
 <%if f.voteable_id==t.id && f.voteable_type=="Attachment" && f.vote%>
 <%a=a+1%>

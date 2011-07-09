@@ -21,7 +21,11 @@
       <% unless c.content.nil? %>
       <div class="listing">
         <%= c.content %></br>
-        Posted By:<%=c.user.name%>
+        Posted By:<%=c.user.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <%if current_user.id==c.user_id %>
+<%= link_to 'Delete', c, :confirm => 'Are you sure?', :method => :delete %>
+
+<%end%>
         <%d=0%>
 <%Vote.all.each do |f|%>
 <%if f.voteable_type=="Comment" && f.voteable_id==c.id && f.vote%>

@@ -23,6 +23,10 @@
     <div class="description">Description: <%= conversation.description %><p style="float:right;">Comments : <%=conversation.comments.count%></p></div>
   
 
+        <%if current_user.id==conversation.user_id %>
+<%= link_to 'Delete', conversation, :confirm => 'Are you sure?', :method => :delete %><br/>
+
+<%end%>
 
 <%d=0%>
 <%Vote.all.each do |f|%>

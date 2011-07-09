@@ -38,8 +38,12 @@
 <%end%>
 <%end%>
 <b><font size="6"><%=d%></font><b>
-<a href="/videos/<%=t.id%>/vote_down5v/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<a href="/videos/<%=t.id%>/vote_down5v/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br/>
 
+<%if current_user.id==t.user_id %>
+<%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %>
+
+<%end%>
 
 <br/><br/>
 

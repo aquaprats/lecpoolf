@@ -18,20 +18,24 @@ Sampleapp::Application.routes.draw do
  match '/users/forgot_password/',:to=>'users#forgot_password'
 
  resources :users
- 
+ resources :comments
+match '/attachments/create/',:to=>'attachments#create'
+match '/attachments/show/',:to=>'attachments#show'
+  
+resources :attachments
 match'/videos',:to=>'videos#index'
   
 match '/videos/create',:to=>'videos#create'
 match '/videos/:id/vote_up/', :to=>'videos#vote_up'
 match '/videos/:id/vote_down/', :to=>'videos#vote_down'
 
-  get "attachments/show"
+ 
 match '/forums/:id/vote_upf/', :to=>'forums#vote_upf'
 match '/conversations/:id/vote_upc/', :to=>'conversations#vote_upc'
 match '/comments/:id/vote_upcm/', :to=>'comments#vote_upcm'
 
 match '/forums/:id/conversations/',:to=>'conversations#index'  
- post "attachments/create"
+post "attachments/create"
 
 
 match '/attachments/:id/vote_up1/', :to=>'attachments#vote_up1'
@@ -145,6 +149,7 @@ match '/videos/search2',:to=>'videos#search2'
 
 
 resources :sessions, :only => [:new, :create, :destroy]
+
 match 'attachments/:id/file',:to=>'attachments#me'
 match 'attachments/:id/file/view1',:to=>'attachments#me1'
 match 'attachments/:id/file/view',:to=>'attachments#view'
@@ -192,9 +197,8 @@ match '/users/:id/course7v', :to=>'users#course7v'
 match '/users/:id/course7e', :to=>'users#course7e'
 
     
-  match '/developers', :to=>'pages#developers'
-
-  match '/contact', :to=>'pages#contact'
+match '/developers', :to=>'pages#developers'
+match '/contact', :to=>'pages#contact'
 match '/about', :to=>'pages#about'
 match '/help', :to=>'pages#help'
 match'/signup',:to=>'users#new'
@@ -204,6 +208,8 @@ match'/users/:id/deleteu',:to=>'users#deleteu'
 match '/signin', :to => 'sessions#new'
 match '/signout', :to => 'sessions#destroy'
 root :to=>'pages#home'
+
+resources :videos
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
