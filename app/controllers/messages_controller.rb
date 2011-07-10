@@ -30,7 +30,7 @@ end
  def destroy
     @message = Message.find(params[:id])
     @message.destroy
-
+    flash[:success]="Message Deleted"
     respond_to do |format|
       format.html { redirect_to(messages_url) }
       format.xml { head :ok }

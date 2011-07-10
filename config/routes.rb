@@ -21,6 +21,8 @@ resources :messages
 
  match '/users/forgot_password/',:to=>'users#forgot_password'
 
+ match '/users/:id/info/',:to=>'users#info'
+
  resources :users
  resources :comments
 match '/attachments/create/',:to=>'attachments#create'

@@ -15,16 +15,35 @@
 <%if current_user.cn1==t.course ||current_user.cn2==t.course ||current_user.cn3==t.course ||current_user.cn4==t.course ||current_user.cn5==t.course ||current_user.cn6==t.course||current_user.cn7==t.course%>  
 <%user=User.find(t.user_id)%>
 <%name=user.name%>
-<% s1=" uploaded a file called " %>
+<% s1=" uploaded a new Document called " %>
 <% s2=" belonging to Course: "%>
+<% s3=" under Category: "%>
 <tr>
 <td class="feed">
-<span class="content"><strong><%=name%></strong><%=s1%><strong><%=t.filename%></strong><%=s2%><strong><%=t.course%></strong></span><br/>
+<span class="content"><strong><%=name%></strong><%=s1%><strong><%=t.filename%></strong><%=s2%><strong><%=t.course%></strong><%=s3%><strong><%=t.category%></strong></span><br/>
 <span class="timestamp">Posted <%= time_ago_in_words(t.created_at) %> ago.</span>
 </td>
 </tr>
 <%end%>
 <%end%>
+
+<% Video.all.each do |t| %>
+<%if current_user.cn1==t.course ||current_user.cn2==t.course ||current_user.cn3==t.course ||current_user.cn4==t.course ||current_user.cn5==t.course ||current_user.cn6==t.course||current_user.cn7==t.course%>  
+<%user=User.find(t.user_id)%>
+<%name=user.name%>
+<% s1=" uploaded a new Video called " %>
+<% s2=" belonging to Course: "%>
+
+<tr>
+<td class="feed">
+<span class="content"><strong><%=name%></strong><%=s1%><strong><%=t.title%></strong><%=s2%><strong><%=t.course%></strong></span><br/>
+<span class="timestamp">Posted <%= time_ago_in_words(t.created_at) %> ago.</span>
+</td>
+</tr>
+<%end%>
+<%end%>
+
+
 </table>
 
 </td>
