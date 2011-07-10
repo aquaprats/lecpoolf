@@ -12,7 +12,7 @@ has_many :videos,:dependent => :destroy
 has_many :forums,:dependent => :destroy
 has_many :conversations,:dependent => :destroy
 has_many :comments,:dependent => :destroy
-
+has_many :messages,:dependent => :destroy
 
 acts_as_voter
 

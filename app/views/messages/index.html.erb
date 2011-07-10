@@ -1,0 +1,33 @@
+
+<%a=0%>
+<% Message.all.each do |msg| %>
+<% if msg.email==current_user.email %>
+<% a=a+1%>
+<%end%>
+<%end%>
+
+<h1>Inbox(<%=a%>)</h1>
+
+<div id="conversations">
+ 
+  <% Message.all.each do |msg| %>
+<% if msg.email==current_user.email %>
+  <div class="listing">
+    <div class="description">Sent By: <%= msg.user.name %> </div>
+     <div class="description">Sender's Email: <%= msg.user.email%></div>
+    <div class="class">Subject: <%= msg.subject %></div>
+    <div class="description">Message: <%= msg.body %></div>
+    <div class="descriptioon" style="float:right;"><%= time_ago_in_words(msg.created_at) %> ago.</div>
+
+<a href="/messages/new" >Reply | </a>
+<%= link_to 'Delete', msg, :confirm => 'Are you sure?', :method => :delete %><br/>
+
+
+
+   </div>
+<%end%>  
+  <% end %>
+
+</div> <!-- div#conversations -->
+
+

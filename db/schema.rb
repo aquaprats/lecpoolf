@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616140925) do
+ActiveRecord::Schema.define(:version => 20110709174611) do
 
   create_table "attachments", :force => true do |t|
     t.string   "filename"
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(:version => 20110616140925) do
   end
 
   add_index "forums", ["user_id"], :name => "index_forums_on_user_id"
+
+  create_table "messages", :force => true do |t|
+    t.string   "subject"
+    t.string   "email"
+    t.text     "body"
+    t.string   "category"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

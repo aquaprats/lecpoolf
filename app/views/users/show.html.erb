@@ -60,14 +60,27 @@
     <%= file_field_tag 'a' %>
     <%= submit_tag "Upload Notes" %>
 
+
 <% end %><br/><br/>
-<strong><font size="4"><b>View : </strong></font><a href="/attachments/show" >NOTES </a>| <a href="/videos"> VIDEO </a></b><br />
-<strong><font size="4"><b>Upload : </strong></font><a href="/videos/create" >VIDEO </a></b><br /><br/>
+
+<%a=0%>
+<% Message.all.each do |msg| %>
+<% if msg.email==current_user.email %>
+<% a=a+1%>
+<%end%>
+<%end%>
+
+
+<strong><font size="4"><b><a href="/messages">Inbox(<%=a%>)</a> </strong></font></b><br/>
+<strong><font size="4"><b><a href="/messages/new">Request Help</a></b></strong></font>
+<br /><br/>
+
 <strong><font size="4"><b>Roll No: </strong> <%= @user.rollno %></font></b><br />
 <strong><font size="4"><b>My Uploads:</strong><%= @user.attachments.count %></font></b><br/>
+<strong><font size="4"><b>View All: </strong></font><a href="/attachments/show" >NOTES </a>| <a href="/videos"> VIDEO </a></b><br />
 <strong><font size="4"><b>Courses: </strong> </font></b>
 
-<a href="/users/<%=params[:id]%>/edit">ADD/CHANGE</a><br />
+<a href="/users/<%=params[:id]%>/edit"><b>ADD / CHANGE</a></b><br />
 <font size="4"><a href="/users/<%=params[:id]%>/course1"><%=@user.cn1%></a></font><br />
 
 <font size="4"><a href="/users/<%=params[:id]%>/course2"><%=@user.cn2%></a> </font><br />
@@ -77,7 +90,6 @@
 <font size="4"><a href="/users/<%=params[:id]%>/course5"><%=@user.cn5%></a> </font><br />
 <font size="4"><a href="/users/<%=params[:id]%>/course6"><%=@user.cn6%></a> </font><br />
 <font size="4"><a href="/users/<%=params[:id]%>/course7"><%=@user.cn7%></a> </font><br />
-
 
 
 

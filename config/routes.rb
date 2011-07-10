@@ -13,6 +13,10 @@ Sampleapp::Application.routes.draw do
   end
   
 
+  match '/messages/create/',:to=>'messages#create'
+match '/messages/new/',:to=>'messages#new'
+resources :messages
+
   match '/users/new_password/',:to=>'users#new_password'
 
  match '/users/forgot_password/',:to=>'users#forgot_password'
