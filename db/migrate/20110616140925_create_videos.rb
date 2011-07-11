@@ -5,6 +5,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :video_code
       t.integer :user_id
       t.string :course
+      t.integer :vcount
 
       t.timestamps
     end

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110711091657) do
     t.integer  "user_id"
     t.string   "course"
     t.string   "category"
+    t.integer  "vcount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20110711091657) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "college"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "encrypted_password"
@@ -109,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20110711091657) do
     t.string   "video_code"
     t.integer  "user_id"
     t.string   "course"
+    t.integer  "vcount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
