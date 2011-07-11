@@ -8,8 +8,7 @@
 
 <br />
 <table class="microposts" summary="User microposts">
-<%Attachment.all.each do |t|%>
-
+<%Attachment.order("vcount DESC").each do |t|%>
 <%if current_user.cn7==t.course && t.category=="Lecture Notes"%>
 
 <%a=0%>

@@ -8,7 +8,7 @@
 
 <br />
 <table class="microposts" summary="User microposts">
-<%Video.all.each do |t|%>
+<%Video.order("vcount DESC").each do |t| %>
 
 <%if current_user.cn7==t.course %>
 

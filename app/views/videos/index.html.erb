@@ -6,7 +6,7 @@
 
 
 
-<%Video.all.each do |t| %>
+<%Video.order("vcount DESC").each do |t| %>
 <% x=t.video_code.split('/').last%>
 <% b=t.video_code.split('/')%>
 <%c=b[2]%>

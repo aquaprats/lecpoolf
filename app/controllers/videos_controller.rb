@@ -6,7 +6,7 @@ before_filter :authenticate
 def vote_up
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)      
       render :show => true
     rescue ActiveRecord::RecordInvalid
       render :show => true
@@ -15,7 +15,7 @@ def vote_up
 def vote_down
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       render :show => true
     rescue ActiveRecord::RecordInvalid
       render :show => true
@@ -25,7 +25,7 @@ def vote_down
 def vote_up1v
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)
          redirect_to :controller => 'users', :action => 'course1v' 
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course1v'
@@ -34,7 +34,7 @@ def vote_up1v
 def vote_down1v
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       redirect_to :controller => 'users', :action => 'course1v'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course1v'
@@ -43,7 +43,7 @@ def vote_down1v
 def vote_up2v
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)
          redirect_to :controller => 'users', :action => 'course2v' 
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course2v'
@@ -52,7 +52,7 @@ def vote_up2v
 def vote_down2v
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       redirect_to :controller => 'users', :action => 'course2v'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course2v'
@@ -61,7 +61,7 @@ def vote_down2v
 def vote_up3v
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)
          redirect_to :controller => 'users', :action => 'course3v' 
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course3v'
@@ -70,7 +70,7 @@ def vote_up3v
 def vote_down3v
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       redirect_to :controller => 'users', :action => 'course3v'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course3v'
@@ -79,7 +79,7 @@ def vote_down3v
 def vote_up4v
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)
          redirect_to :controller => 'users', :action => 'course4v' 
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course4v'
@@ -88,7 +88,7 @@ def vote_up4v
 def vote_down4v
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       redirect_to :controller => 'users', :action => 'course4v'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course4v'
@@ -97,7 +97,7 @@ def vote_down4v
 def vote_up5v
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)
          redirect_to :controller => 'users', :action => 'course5v' 
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course5v'
@@ -106,7 +106,7 @@ def vote_up5v
 def vote_down5v
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       redirect_to :controller => 'users', :action => 'course5v'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course5v'
@@ -115,7 +115,7 @@ def vote_down5v
 def vote_up6v
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)
          redirect_to :controller => 'users', :action => 'course6v' 
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course6v'
@@ -124,7 +124,7 @@ def vote_up6v
 def vote_down6v
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       redirect_to :controller => 'users', :action => 'course6v'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course6v'
@@ -133,7 +133,7 @@ def vote_down6v
 def vote_up7v
     begin
       current_user.vote_for(@video = Video.find(params[:id]))
-
+      @video.increment!(:vcount)
          redirect_to :controller => 'users', :action => 'course7v' 
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course7v'
@@ -142,7 +142,7 @@ def vote_up7v
 def vote_down7v
     begin
       current_user.vote_against(@video = Video.find(params[:id]))
-
+      @video.decrement!(:vcount)
       redirect_to :controller => 'users', :action => 'course7v'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course7v'
@@ -158,7 +158,7 @@ end
 
 def search2
     @search2 = Video.search(params[:search])
-    @videos = @search2.all   # load all matching records
+    @videos = @search2.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
     @videos = @search2.paginate(:page => params[:page]) # Who doesn't love will_paginate?
@@ -180,6 +180,7 @@ def search2
         @video.title=params[:video][:title]
         @video.video_code = params[:video][:video_code]
         @video.user_id=current_user.id
+        @video.vcount=0
         if @video.save
             flash[:notice] = "Thank you for your submission.If video doesn't appear then you haven't provided a correct youtube link !"
             redirect_to :action => "index"

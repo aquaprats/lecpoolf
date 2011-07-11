@@ -7,7 +7,7 @@
 <br />
 
 <h3>Files:</h3>
-<%Attachment.all.each do |t|%>
+<%Attachment.order("vcount DESC").each do |t|%>
 <%a2=0%>
 
 <a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br /> 
