@@ -20,8 +20,9 @@
     <td><%= conversation.user.name %></td>
     <td><%= conversation.comments.count%></td>
     <td><%= link_to 'Show', conversation %></td>
-    <td><%= link_to 'Edit', edit_conversation_path(conversation) %></td>
+    
     <% if current_user.id==conversation.user_id %>
+    <td><%= link_to 'Edit', edit_conversation_path(conversation) %></td>
     <td><%= link_to 'Destroy', conversation, :confirm => 'Are you sure?', :method => :delete %></td>
     <%end%>
   </tr>

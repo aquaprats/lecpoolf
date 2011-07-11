@@ -16,7 +16,7 @@ class ConversationsController < ApplicationController
   # GET /conversations
   # GET /conversations.xml
   def index
-    @conversations = Conversation.all
+    @conversations = @forum.conversations.all
 
     respond_to do |format|
       format.html # index.html.erb
