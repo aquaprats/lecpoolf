@@ -4,14 +4,20 @@
 
 
 <div class="field">
-<%= f.label :password %><br />
+<%= f.label :password,"Old/New Password" %><br />
 <%= f.password_field :password %>
+</div>
+
+<div class="field">
+<%= f.label :password_confirmation,"Confirm Old/New Password" %><br />
+<%= f.password_field :password_confirmation %>
 </div>
 
 
 
+
 <div class="field">
-<%= f.label :cn1, "Course No.1  (Note: Use small case and don't put a space in b/w . Eg: cs100)" %><br />
+<%= f.label :cn1, "Course No.1  (Note: Use lower case and don't put a space anywhere. Eg: cs100)" %><br />
 <%= f.text_field :cn1 %>
 </div>
 <div class="field">
