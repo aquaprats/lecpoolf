@@ -11,10 +11,10 @@
 <% b=t.video_code.split('/')%>
 <%c=b[2]%>
 <%if c=="youtu.be" %>
-<p><strong>Title:<%=t.title%></strong></p><br/>
-<p><strong>Course:<%=t.course%></strong></p><br/>
-<p><strong>Posted By:<%=t.user.name%></strong></p><br/>
-<a href="/favourites/<%=t.id%>/fv/">Add to Favourites</a><br/>
+<p><strong>Title:<%=t.title%></strong></p>
+<p><strong>Course:<%=t.course%></strong></p>
+<p><strong>Posted By:<%=t.user.name%></strong></p>
+
 <%d=0%>
 <%Vote.all.each do |f|%>
 <%if f.voteable_type=="Video" && f.voteable_id==t.id && f.vote%>
@@ -32,6 +32,7 @@
 <%end%>
 <b><font size="6"><%=d%></font><b>
 <a href="/videos/<%=t.id%>/vote_down/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br/>
+<a href="/favourites/<%=t.id%>/fv/">Add to Favourites</a><br/>
 <%if current_user.id==t.user_id %>
 <%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
 <%else%>

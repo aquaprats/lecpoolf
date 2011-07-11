@@ -18,6 +18,7 @@ match '/messages/new/',:to=>'messages#new'
 resources :messages
 
   match '/users/:id/new_password/',:to=>'users#new_password'
+  match '/users/search2/',:to=>'users#search2'
 
  match '/users/forgot_password/',:to=>'users#forgot_password'
 

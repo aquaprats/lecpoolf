@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_filter :authenticate, :only => [ :index,:show,:edit,:update,:new_password]
-before_filter :correct_user, :only => [:index,:show,:new_password,:edit, :update]
+before_filter :correct_user, :only => [:show,:new_password,:edit, :update]
 before_filter :admin_user, :only =>:destroy
 
 
@@ -141,7 +141,9 @@ end
 
 def index
 @title = "All users"
+
 @users = User.paginate(:page => params[:page])
+  @users.sort! { |a,b| a.name.downcase <=> b.name.downcase }
 end
 def show
 @user = User.find(params[:id])
@@ -260,7 +262,13 @@ flash[:success] = "User destroyed."
 redirect_to users_path
 end
 
-
+def search2
+  @search = User.search(params[:search])
+   @users = @search.all   # load all matching records
+    # @articles = @search.relation # Retrieve the relation, to lazy-load in view
+    # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+    @users = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+end
 
 private
 def authenticate
