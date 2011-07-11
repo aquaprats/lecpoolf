@@ -13,6 +13,7 @@ has_many :forums,:dependent => :destroy
 has_many :conversations,:dependent => :destroy
 has_many :comments,:dependent => :destroy
 has_many :messages,:dependent => :destroy
+has_many :favourites,:dependent => :destroy
 
 acts_as_voter
 

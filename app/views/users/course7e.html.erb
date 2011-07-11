@@ -22,6 +22,7 @@
 <%else%>
 <a href="/attachments/<%=t.id%>/file/view">View</a><br/>
 <%end%>
+<a href="/favourites/<%=t.id%>/fa/">Add to Favourites</a><br/>
 <%if current_user.id==t.user_id %>
 <%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
 <%else%>

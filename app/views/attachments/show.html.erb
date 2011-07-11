@@ -10,12 +10,15 @@
 <%Attachment.all.each do |t|%>
 <%a2=0%>
 
-<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br /> 
+Course: <%=t.course%><br/> Category:<%=t.category%><br/>
+ Posted By:<%=t.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%if t.content_type=="image/jpeg"||t.content_type=="image/png"||t.content_type=="image/jpg"||t.content_type=="image/gif"||t.content_type=="image/tif"%>
 <a href="/attachments/<%=t.id%>/file/view1">View</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%else%>
 <a href="/attachments/<%=t.id%>/file/view">View</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%end%>
+<a href="/favourites/<%=t.id%>/fa/">Add to Favourites</a><br/>
 <%if current_user.id==t.user_id %>
 <%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
 <%else%>

@@ -1,0 +1,68 @@
+<table class="profile" summary="Profile information">
+<tr>
+<td class="main">
+
+
+
+
+
+
+<table class="microposts" summary="User microposts">
+
+
+
+
+<h1>My Favourite Quiz Papers</h1><br/>
+
+<% Favourite.all.each do |t| %>
+
+
+<% if current_user.id==t.user_id  && t.category=="Attachment" && t.attachment.category=="Quiz"%>
+<tr>
+<td class="feed">
+<span class="content">
+
+
+<a href ="/attachments/<%=t.attachment.id%>/file"><%=t.attachment.filename%></a> <br />
+Course: <%=t.attachment.course%><br/> Category:<%=t.attachment.category%><br/>
+Posted By:<%=t.attachment.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%if t.attachment.content_type=="image/jpeg"||t.attachment.content_type=="image/png"||t.attachment.content_type=="image/jpg"||t.attachment.content_type=="image/gif"||t.attachment.content_type=="image/tif"%>
+<a href="/attachments/<%=t.attachment.id%>/file/view1">View</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%else%>
+<a href="/attachments/<%=t.attachment.id%>/file/view">View</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%end%>
+
+
+<%= link_to 'Remove from favourites', t, :confirm => 'Are you sure?', :method => :delete %><br/><br/>
+
+
+
+
+
+
+
+
+<%end%>
+<%end%>
+
+</td>
+</tr>
+</table>
+</td>
+<td class="sidebar round" >
+ 
+
+<strong><font size="4"><b><a href="/favourites/fva/" >All Documents</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/favourites/fvl/" >Lecture Notes</a></font></b><br /><br/>
+
+
+<strong><font size="4"><b><a href="/favourites/fvaa/" >Assignments</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/favourites/fve/" >Exam Papers</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/favourites/fvvv/" >Videos</a></font></b><br /><br/>
+
+
+
+
+</td>
+</tr>
+</table>

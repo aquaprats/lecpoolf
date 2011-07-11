@@ -28,7 +28,7 @@ resources :messages
 match '/attachments/create/',:to=>'attachments#create'
 match '/attachments/show/',:to=>'attachments#show'
   
-resources :attachments
+
 match'/videos',:to=>'videos#index'
   
 match '/videos/create',:to=>'videos#create'
@@ -213,9 +213,26 @@ match'/users/:id/deleteu',:to=>'users#deleteu'
 
 match '/signin', :to => 'sessions#new'
 match '/signout', :to => 'sessions#destroy'
+
+match '/favourites/:id/fa/',:to=>'favourites#fa'
+match '/favourites/:id/fv/',:to=>'favourites#fv'
+match '/favourites/fva/',:to=>'favourites#fva'
+match '/favourites/fvaa/',:to=>'favourites#fvaa'
+match '/favourites/fve/',:to=>'favourites#fve'
+match '/favourites/fvq/',:to=>'favourites#fvq'
+match '/favourites/fvvv/',:to=>'favourites#fvvv'
+match '/favourites/fvl/',:to=>'favourites#fvl'
+
+
 root :to=>'pages#home'
 
 resources :videos
+
+resources :attachments 
+resources :favourites
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -9,14 +9,14 @@
 <strong><%=a%> Matching Results Found!</strong><br /><br />
 <%@attachments.each do |t|%>
 <%if t.course==current_user.cn7%>
-<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a>  | Posted By:<%=t.user.name%> |
+<a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a>  <br/>Course: <%=t.course%><br/> Category:<%=t.category%><br/> Posted By:<%=t.user.name%> |
 <%if t.content_type=="image/jpeg"||t.content_type=="image/png"||t.content_type=="image/jpg"||t.content_type=="image/gif"||t.content_type=="image/tif"%>
 <a href="/attachments/<%=t.id%>/file/view1">View</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%else%>
 <a href="/attachments/<%=t.id%>/file/view">View</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%end%>
 <%a2=0%>
-
+<a href="/favourites/<%=t.id%>/fa/">Add to Favourites</a><br/>
 <%if current_user.id==t.user_id %>
 <%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
 <%else%>

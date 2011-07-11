@@ -1,5 +1,6 @@
 class Attachment < ActiveRecord::Base
 belongs_to:user
+has_many :favourites
 attr_accessible :course 
 validates :course, :presence => true
 

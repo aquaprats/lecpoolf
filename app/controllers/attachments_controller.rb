@@ -1,5 +1,6 @@
 class AttachmentsController < ApplicationController
 
+
 def view
 @t=Attachment.find(params[:id])
 end
@@ -767,5 +768,11 @@ def index8
             render :action => "create"
         end
     end
+
+private
+def authenticate
+deny_access unless signed_in?
 end
+end
+
 
