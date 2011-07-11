@@ -206,7 +206,7 @@ end
 
 
 def new_password
-		           @user=current_user
+		           @user=User.find(params[:id])
 			
 			if @user.update_attributes(:password=>params[:password], :password_confirmation => params[:password_confirmation])
 				flash[:success]="Password Changed"

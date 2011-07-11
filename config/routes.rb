@@ -17,7 +17,7 @@ Sampleapp::Application.routes.draw do
 match '/messages/new/',:to=>'messages#new'
 resources :messages
 
-  match '/users/new_password/',:to=>'users#new_password'
+  match '/users/:id/new_password/',:to=>'users#new_password'
 
  match '/users/forgot_password/',:to=>'users#forgot_password'
 
