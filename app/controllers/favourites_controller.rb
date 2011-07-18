@@ -28,26 +28,32 @@ end
 
 
 def fva
+ @title="Favourites"
 end
 
 
 def fvaa
+@title="Favourites"
 end
 
 
 def fvl
+@title="Favourites"
 end
 
 
 def fvq
+@title="Favourites"
 end
 
 
 def fve
+@title="Favourites"
 end
 
 
 def fvvv
+@title="Favourites"
 end
 
 

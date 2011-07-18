@@ -5,142 +5,188 @@ before_filter :admin_user, :only =>:destroy
 
 
 def course1
-
+@user = User.find(params[:id])
+@title = @user.cn1.upcase
 end
 
 def course1l
-
+@user = User.find(params[:id])
+@title = @user.cn1.upcase
 end
 def course1a
-
+@user = User.find(params[:id])
+@title = @user.cn1.upcase
 end
 def course1q
-
+@user = User.find(params[:id])
+@title = @user.cn1.upcase
 end
 def course1e
-
+@user = User.find(params[:id])
+@title = @user.cn1.upcase
 end
 def course1v
-
+@user = User.find(params[:id])
+@title = @user.cn1.upcase
 end
 
 
 def course2
-
+@user = User.find(params[:id])
+@title = @user.cn2.upcase
 end
 def course2l
-
+@user = User.find(params[:id])
+@title = @user.cn2.upcase
 end
 def course2a
-
+@user = User.find(params[:id])
+@title = @user.cn2.upcase
 end
 def course2q
-
+@user = User.find(params[:id])
+@title = @user.cn2.upcase
 end
 def course2e
-
+@user = User.find(params[:id])
+@title = @user.cn2.upcase
 end
 def course2v
-
+@user = User.find(params[:id])
+@title = @user.cn2.upcase
 end
 
 def course3
-
+@user = User.find(params[:id])
+@title = @user.cn3.upcase
 end
 
 def course3l
-
+@user = User.find(params[:id])
+@title = @user.cn3.upcase
 end
 def course3a
-
+@user = User.find(params[:id])
+@title = @user.cn3.upcase
 end
 def course3q
-
+@user = User.find(params[:id])
+@title = @user.cn3.upcase
 end
 def course3e
-
+@user = User.find(params[:id])
+@title = @user.cn3.upcase
 end
 def course3v
-
+@user = User.find(params[:id])
+@title = @user.cn3.upcase
 end
 
+
 def course4
+@user = User.find(params[:id])
+@title = @user.cn4.upcase
 end
 
 def course4l
-
+@user = User.find(params[:id])
+@title = @user.cn4.upcase
 end
 def course4a
-
+@user = User.find(params[:id])
+@title = @user.cn4.upcase
 end
 def course4q
-
+@user = User.find(params[:id])
+@title = @user.cn4.upcase
 end
 def course4e
-
+@user = User.find(params[:id])
+@title = @user.cn4.upcase
 end
 def course4v
-
+@user = User.find(params[:id])
+@title = @user.cn4.upcase
 end
 def course5
-
+@user = User.find(params[:id])
+@title = @user.cn5.upcase
 end
 
 def course5l
-
+@user = User.find(params[:id])
+@title = @user.cn5.upcase
 end
 def course5a
-
+@user = User.find(params[:id])
+@title = @user.cn5.upcase
 end
 def course5q
-
+@user = User.find(params[:id])
+@title = @user.cn5.upcase
 end
 def course5e
-
+@user = User.find(params[:id])
+@title = @user.cn5.upcase
 end
 def course5v
-
+@user = User.find(params[:id])
+@title = @user.cn5.upcase
 end
 def course6
+@user = User.find(params[:id])
+@title = @user.cn6.upcase
 end
 def course6l
-
+@user = User.find(params[:id])
+@title = @user.cn6.upcase
 end
 def course6a
-
+@user = User.find(params[:id])
+@title = @user.cn6.upcase
 end
 def course6q
-
+@user = User.find(params[:id])
+@title = @user.cn6.upcase
 end
 def course6e
-
+@user = User.find(params[:id])
+@title = @user.cn6.upcase
 end
 def course6v
-
+@user = User.find(params[:id])
+@title = @user.cn6.upcase
 end
 
 
 def course7
+@user = User.find(params[:id])
+@title = @user.cn7.upcase
 end
 
 def course7l
-
+@user = User.find(params[:id])
+@title = @user.cn7.upcase
 end
 def course7a
-
+@user = User.find(params[:id])
+@title = @user.cn7.upcase
 end
 def course7q
-
+@user = User.find(params[:id])
+@title = @user.cn7.upcase
 end
 def course7e
-
+@user = User.find(params[:id])
+@title = @user.cn7.upcase
 end
 def course7v
-
+@user = User.find(params[:id])
+@title = @user.cn7.upcase
 end
 
 def index
-@title = "All users"
+@title = "All Users"
 
 @users = User.paginate(:page => params[:page])
   @users.sort! { |a,b| a.name.downcase <=> b.name.downcase }
@@ -152,7 +198,7 @@ def show
 end
 def new
 @user = User.new
-@title = "Sign up"
+@title = "Sign Up"
 end
 def create
 @user = User.new(params[:user])
@@ -208,6 +254,7 @@ end
 
 
 def new_password
+@title = "New Password"
 		           @user=User.find(params[:id])
 			
 			if @user.update_attributes(:password=>params[:password], :password_confirmation => params[:password_confirmation])
@@ -218,6 +265,7 @@ def new_password
   end
 
   def forgot_password
+      @title = "Forgot Password"
 		     if request.post?
 			u= User.find_by_email(params[:user][:email])
 			if u
@@ -238,7 +286,7 @@ def new_password
 
 def edit
 @user = User.find(params[:id])
-@title = "Edit user"
+@title = "Edit Profile"
 end
 def update
 @user = User.find(params[:id])
@@ -246,12 +294,13 @@ if @user.update_attributes(params[:user])
 flash[:success] = "Changes Successfuly Saved!"
 redirect_to @user
 else
-@title = "Edit user"
+@title = "Edit Profile"
 render 'edit'
 end
 end
 
 def info
+@title = "Info"
 @user=User.find(params[:id])
 end
 
@@ -268,6 +317,7 @@ def search2
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     # @articles = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
     @users = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
+  @title = "Search"
 end
 
 private

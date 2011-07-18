@@ -150,13 +150,16 @@ def vote_down7v
   end
 
 def index
+ @title="Videos" 
 end
 
 def new
+ @title="New Video" 
  @video = Video.new
 end 
 
 def search2
+    @title="Search" 
     @search2 = Video.search(params[:search])
     @videos = @search2.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
@@ -172,7 +175,8 @@ def search2
       format.xml { head :ok }
     end
   end
- def create      
+ def create     
+       @title="New Video" 
         return if params[:video].blank?
 
        @video = Video.new

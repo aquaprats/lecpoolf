@@ -2,6 +2,7 @@ class AttachmentsController < ApplicationController
 
 
 def view
+ @title="View Document"
 @t=Attachment.find(params[:id])
 end
 
@@ -685,22 +686,26 @@ def vote_down7l
   end
 
 def show
+       @title="All Documents"
         #@attachment = Attachment.find(params[:id])
        #send_data  @attachment.id, @attachment.data, :filename => @attachment.filename, :type => @attachment.content_type
     end
    def index
+     @title="Search"
     @search = Attachment.search(params[:search])
     @attachments = @search.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
       @attachments = @search.paginate(:page => params[:page])# Who doesn't love will_paginate?
   end
 def index2
+     @title="Search"
     @search = Attachment.search(params[:search])
     @attachments = @search.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
     @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index3
+     @title="Search"
     @search = Attachment.search(params[:search])
    @attachments = @search.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
@@ -708,6 +713,7 @@ def index3
     @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index4
+     @title="Search"
     @search = Attachment.search(params[:search])
     @attachments = @search.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
@@ -715,6 +721,7 @@ def index4
      @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index5
+     @title="Search"
     @search = Attachment.search(params[:search])
 @attachments = @search.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
@@ -722,6 +729,7 @@ def index5
     @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index6
+     @title="Search"
     @search = Attachment.search(params[:search])
 @attachments = @search.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
@@ -729,6 +737,7 @@ def index6
  @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate? 
  end
 def index7
+     @title="Search"
     @search = Attachment.search(params[:search])
 @attachments = @search.order("vcount DESC") #load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
@@ -736,6 +745,7 @@ def index7
  @attachments = @search.paginate(:page => params[:page]) # Who doesn't love will_paginate?
   end
 def index8
+     @title="Search"
     @search = Attachment.search(params[:search])
     @attachments = @search.order("vcount DESC")   # load all matching records
     # @articles = @search.relation # Retrieve the relation, to lazy-load in view
@@ -752,7 +762,9 @@ def index8
       format.xml { head :ok }
     end
   end
-    def create      
+    def create   
+        @title="Upload"
+   
         return if params[:attachment].blank?
        
        @attachment = Attachment.new

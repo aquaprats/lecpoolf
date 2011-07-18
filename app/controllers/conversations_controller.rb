@@ -16,6 +16,8 @@ class ConversationsController < ApplicationController
   # GET /conversations
   # GET /conversations.xml
   def index
+     @title="Questions"
+
     @conversations = @forum.conversations.all
 
     respond_to do |format|
@@ -27,6 +29,7 @@ class ConversationsController < ApplicationController
   # GET /conversations/1
   # GET /conversations/1.xml
   def show
+     @title="Questions"
     @conversation = Conversation.find(params[:id])
     @comments = @conversation.comments.all
     @comment = @conversation.comments.build
@@ -40,6 +43,7 @@ class ConversationsController < ApplicationController
   # GET /conversations/new
   # GET /conversations/new.xml
   def new
+     @title="New Question"
     #@conversation = Conversation.new
     @conversation = @forum.conversations.build
 
@@ -51,12 +55,14 @@ class ConversationsController < ApplicationController
 
   # GET /conversations/1/edit
   def edit
+     @title="Edit Question"
     @conversation = Conversation.find(params[:id])
   end
 
   # POST /conversations
   # POST /conversations.xml
   def create
+   @title="New Question"
     #@conversation = Conversation.new(params[:conversation])
     @conversation = @forum.conversations.new(params[:conversation])
       @conversation.user_id=current_user.id
@@ -75,6 +81,7 @@ class ConversationsController < ApplicationController
   # PUT /conversations/1
   # PUT /conversations/1.xml
   def update
+    @title="Questions"
     @conversation = Conversation.find(params[:id])
 
     respond_to do |format|

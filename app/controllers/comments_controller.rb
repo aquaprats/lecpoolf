@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.xml
   def index
+   @title="Comments"
     @comments = @conversation.comments.all
 
     respond_to do |format|
@@ -31,6 +32,7 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.xml
   def show
+   @title="Comments"
     @comment = @conversation.comments.find(params[:id])
 
     respond_to do |format|
@@ -42,6 +44,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.xml
   def new
+    @title="New Comment"
     @comment = @conversation.comments.build
 
     respond_to do |format|
@@ -52,6 +55,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+   @title="Edit Comment"
     @comment = Comment.find(params[:id])
   end
 
@@ -74,6 +78,7 @@ class CommentsController < ApplicationController
   # PUT /comments/1
   # PUT /comments/1.xml
   def update
+     @title="Comments"
     @comment = Comment.find(params[:id])
 
     respond_to do |format|

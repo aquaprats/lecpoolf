@@ -17,6 +17,7 @@ before_filter :check, :only=>[:destroy,:edit]
   end
 
   def index
+   @title="Forums"
     @forums = Forum.all
 
     respond_to do |format|
@@ -28,6 +29,7 @@ before_filter :check, :only=>[:destroy,:edit]
   # GET /forums/1
   # GET /forums/1.xml
   def show
+     @title="Forums"
     @forum = Forum.find(params[:id])
     @conversations = @forum.conversations.all
 
@@ -40,6 +42,7 @@ before_filter :check, :only=>[:destroy,:edit]
   # GET /forums/new
   # GET /forums/new.xml
   def new
+     @title="New Forum"
     @forum = Forum.new
 
     respond_to do |format|
@@ -50,12 +53,14 @@ before_filter :check, :only=>[:destroy,:edit]
 
   # GET /forums/1/edit
   def edit
+     @title="Edit Forum"
     @forum = Forum.find(params[:id])
   end
 
   # POST /forums
   # POST /forums.xml
   def create
+     @title="New Forum"
     @forum = Forum.new(params[:forum])
      @forum.user_id=current_user.id
     respond_to do |format|
@@ -72,6 +77,7 @@ before_filter :check, :only=>[:destroy,:edit]
   # PUT /forums/1
   # PUT /forums/1.xml
   def update
+     @title="Forums"
     @forum = Forum.find(params[:id])
 
     respond_to do |format|

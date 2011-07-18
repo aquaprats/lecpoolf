@@ -8,7 +8,7 @@ user = User.authenticate(params[:session][:email],
 params[:session][:password])
 if user.nil?
 flash.now[:error] = "Invalid email/password combination."
-@title = "Sign in"
+@title = "Sign In"
 
 render 'new'
 else 
@@ -17,7 +17,7 @@ if user.activated
   redirect_back_or user
 else
   flash.now[:error]="Your account is not activated"
-  @title = "Sign in"
+  @title = "Sign In"
 
   render 'new'
   end

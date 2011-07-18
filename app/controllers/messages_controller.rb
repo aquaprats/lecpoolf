@@ -3,9 +3,11 @@ before_filter :authenticate
 
 
 def index
+  @title="Inbox"
 end
 
  def new
+     @title="New Message"
     @message = Message.new
 
    
@@ -13,6 +15,7 @@ end
   end
 
  def create
+     @title="New Message"
     @message = Message.new(params[:message])
    
      @message.user_id=current_user.id
