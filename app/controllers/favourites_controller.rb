@@ -31,6 +31,9 @@ def fva
  @title="Favourites"
 end
 
+def fvb
+ @title="Favourites"
+end
 
 def fvaa
 @title="Favourites"

@@ -1,16 +1,15 @@
-<table class="profile" summary="Profile information">
+table class="profile" summary="Profile information">
 <tr>
 <td class="main">
 
-<h1><strong><%=current_user.cn7.upcase%> : Exam Papers</strong></h1>
+<h1><strong><%=current_user.cn7.upcase%> : E-books</strong></h1>
 
 
 
 <br />
 <table class="microposts" summary="User microposts">
 <%Attachment.order("vcount DESC").each do |t|%>
-
-<%if current_user.cn7==t.course && t.category=="Exam Paper"%>
+<%if current_user.cn7==t.course && t.category=="E-book"%>
 
 <%a=0%>
 <tr>
@@ -34,7 +33,7 @@
 <%end%>
 <%end%>
 <b><font size="6"><%=a%></font></b>
-<a href="/attachments/<%=t.id%>/vote_up7e/" data-method="post" rel="nofollow"><img src="/images/thumbs_up.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+<a href="/attachments/<%=t.id%>/vote_up7b/" data-method="post" rel="nofollow"><img src="/images/thumbs_up.png" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 
 
@@ -45,7 +44,7 @@
 <%end%>
 <%end%>
 <b><font size="6"><%=a%></font></b>
-<a href="/attachments/<%=t.id%>/vote_down7e/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;</a><br/>
+<a href="/attachments/<%=t.id%>/vote_down7b/" data-method="post" rel="nofollow"><img src="/images/thumbsdown.png" />&nbsp;&nbsp;</a><br/>
 
 <%end%>
 <%end%>
@@ -62,12 +61,12 @@
 
 
 <strong><font size="4"><b><a href="/users/<%=current_user.id%>/course7" >All Documents</a></font></b><br /><br/>
-<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course7b" >E-books</a></font></b><br /><br/>
 <strong><font size="4"><b><a href="/users/<%=current_user.id%>/course7l" >Lecture Notes</a></font></b><br /><br/>
-<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course7a" >Assignments</a></font></b><br /><br/>
-
 <strong><font size="4"><b><a href="/users/<%=current_user.id%>/course7q" >Quiz Papers</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/users/<%=current_user.id%>/course7e" >Exam Papers</a></font></b><br /><br/>
 <strong><font size="4"><b><a href="/users/<%=current_user.id%>/course7v" >Videos</a></font></b><br /><br/>
+
+
 
 
 

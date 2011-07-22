@@ -55,6 +55,24 @@ def vote_down1
       redirect_to :controller => 'users', :action => 'course1'
     end
   end
+def vote_up1b
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+           @attachment.increment!(:vcount)
+         redirect_to :controller => 'users', :action => 'course1b' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course1b'
+    end
+  end
+def vote_down1b
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+       @attachment.decrement!(:vcount)
+      redirect_to :controller => 'users', :action => 'course1b'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course1b'
+    end
+  end
 def vote_up1a
     begin
       current_user.vote_for(@attachment = Attachment.find(params[:id]))
@@ -144,6 +162,24 @@ def vote_down2
       redirect_to :controller => 'users', :action => 'course2'
     rescue ActiveRecord::RecordInvalid
       redirect_to :controller => 'users', :action => 'course2'
+    end
+  end
+def vote_up1b
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+           @attachment.increment!(:vcount)
+         redirect_to :controller => 'users', :action => 'course1b' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course1b'
+    end
+  end
+def vote_down2b
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+       @attachment.decrement!(:vcount)
+      redirect_to :controller => 'users', :action => 'course2b'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course2b'
     end
   end
 def vote_up2a
@@ -237,7 +273,24 @@ def vote_down3
       redirect_to :controller => 'users', :action => 'course3'
     end
   end
-
+def vote_up3b
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+           @attachment.increment!(:vcount)
+         redirect_to :controller => 'users', :action => 'course3b' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course3b'
+    end
+  end
+def vote_down3b
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+       @attachment.decrement!(:vcount)
+      redirect_to :controller => 'users', :action => 'course3b'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course3b'
+    end
+  end
 def vote_up3a
     begin
       current_user.vote_for(@attachment = Attachment.find(params[:id]))
@@ -330,7 +383,24 @@ def vote_down4
       redirect_to :controller => 'users', :action => 'course4'
     end
   end
-
+def vote_up4b
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+           @attachment.increment!(:vcount)
+         redirect_to :controller => 'users', :action => 'course4b' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course4b'
+    end
+  end
+def vote_down4b
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+       @attachment.decrement!(:vcount)
+      redirect_to :controller => 'users', :action => 'course4b'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course4b'
+    end
+  end
 def vote_up4a
     begin
       current_user.vote_for(@attachment = Attachment.find(params[:id]))
@@ -423,7 +493,24 @@ def vote_down5
       redirect_to :controller => 'users', :action => 'course5'
     end
   end
-
+def vote_up5b
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+           @attachment.increment!(:vcount)
+         redirect_to :controller => 'users', :action => 'course5b' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course5b'
+    end
+  end
+def vote_down5b
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+       @attachment.decrement!(:vcount)
+      redirect_to :controller => 'users', :action => 'course5b'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course5b'
+    end
+  end
 def vote_up5a
     begin
       current_user.vote_for(@attachment = Attachment.find(params[:id]))
@@ -516,7 +603,24 @@ def vote_down6
       redirect_to :controller => 'users', :action => 'course6'
     end
   end
-
+def vote_up6b
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+           @attachment.increment!(:vcount)
+         redirect_to :controller => 'users', :action => 'course6b' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course6b'
+    end
+  end
+def vote_down6b
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+       @attachment.decrement!(:vcount)
+      redirect_to :controller => 'users', :action => 'course6b'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course6b'
+    end
+  end
 
 def vote_up6a
     begin
@@ -610,7 +714,24 @@ def vote_down7
       redirect_to :controller => 'users', :action => 'course7'
     end
   end
-
+def vote_up7b
+    begin
+      current_user.vote_for(@attachment = Attachment.find(params[:id]))
+           @attachment.increment!(:vcount)
+         redirect_to :controller => 'users', :action => 'course7b' 
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course7b'
+    end
+  end
+def vote_down7b
+    begin
+      current_user.vote_against(@attachment = Attachment.find(params[:id]))
+       @attachment.decrement!(:vcount)
+      redirect_to :controller => 'users', :action => 'course7b'
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :controller => 'users', :action => 'course7b'
+    end
+  end
 def vote_up7a
     begin
       current_user.vote_for(@attachment = Attachment.find(params[:id]))

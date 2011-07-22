@@ -11,12 +11,13 @@
 
 
 
-<h1>My Favourite Exam Papers</h1><br/>
+
+<h1>My Favourite E-books</h1><br/>
 
 <% Favourite.all.each do |t| %>
 
 
-<% if current_user.id==t.user_id && t.category=="Attachment" && t.attachment.category=="Exam Paper"%>
+<% if current_user.id==t.user_id && t.category=="Attachment" && t.attachment.category=="E-book" %>
 <tr>
 <td class="feed">
 <span class="content">
@@ -50,13 +51,13 @@ Posted By:<%=t.attachment.user.name%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </td>
 <td class="sidebar round" >
  
-
 <strong><font size="4"><b><a href="/favourites/fva/" >All Documents</a></font></b><br /><br/>
-<strong><font size="4"><b><a href="/favourites/fvb/" >E-books</a></font></b><br /><br/>
 <strong><font size="4"><b><a href="/favourites/fvl/" >Lecture Notes</a></font></b><br /><br/>
 <strong><font size="4"><b><a href="/favourites/fvaa/" >Assignments</a></font></b><br /><br/>
 
+
 <strong><font size="4"><b><a href="/favourites/fvq/" >Quiz Papers</a></font></b><br /><br/>
+<strong><font size="4"><b><a href="/favourites/fve/" >Exam Papers</a></font></b><br /><br/>
 <strong><font size="4"><b><a href="/favourites/fvvv/" >Videos</a></font></b><br /><br/>
 
 

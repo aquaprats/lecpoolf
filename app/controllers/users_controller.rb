@@ -8,7 +8,10 @@ def course1
 @user = User.find(params[:id])
 @title = @user.cn1.upcase
 end
-
+def course1b
+@user = User.find(params[:id])
+@title = @user.cn1.upcase
+end
 def course1l
 @user = User.find(params[:id])
 @title = @user.cn1.upcase
@@ -32,6 +35,10 @@ end
 
 
 def course2
+@user = User.find(params[:id])
+@title = @user.cn2.upcase
+end
+def course2b
 @user = User.find(params[:id])
 @title = @user.cn2.upcase
 end
@@ -60,7 +67,10 @@ def course3
 @user = User.find(params[:id])
 @title = @user.cn3.upcase
 end
-
+def course3b
+@user = User.find(params[:id])
+@title = @user.cn3.upcase
+end
 def course3l
 @user = User.find(params[:id])
 @title = @user.cn3.upcase
@@ -87,7 +97,10 @@ def course4
 @user = User.find(params[:id])
 @title = @user.cn4.upcase
 end
-
+def course4b
+@user = User.find(params[:id])
+@title = @user.cn4.upcase
+end
 def course4l
 @user = User.find(params[:id])
 @title = @user.cn4.upcase
@@ -112,7 +125,10 @@ def course5
 @user = User.find(params[:id])
 @title = @user.cn5.upcase
 end
-
+def course5b
+@user = User.find(params[:id])
+@title = @user.cn5.upcase
+end
 def course5l
 @user = User.find(params[:id])
 @title = @user.cn5.upcase
@@ -134,6 +150,10 @@ def course5v
 @title = @user.cn5.upcase
 end
 def course6
+@user = User.find(params[:id])
+@title = @user.cn6.upcase
+end
+def course6b
 @user = User.find(params[:id])
 @title = @user.cn6.upcase
 end
@@ -163,7 +183,10 @@ def course7
 @user = User.find(params[:id])
 @title = @user.cn7.upcase
 end
-
+def course7b
+@user = User.find(params[:id])
+@title = @user.cn7.upcase
+end
 def course7l
 @user = User.find(params[:id])
 @title = @user.cn7.upcase

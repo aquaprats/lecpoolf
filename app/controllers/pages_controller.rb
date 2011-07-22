@@ -14,7 +14,7 @@ end
 def help
 @title="Help"
 end
-def contact
-@title="Contact"  
+def developers
+@title="Developers"  
 end
 end
