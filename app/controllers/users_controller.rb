@@ -5,206 +5,206 @@ before_filter :admin_user, :only =>:destroy
 
 
 def course1
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn1.upcase
 end
 def course1b
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn1.upcase
 end
 def course1l
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn1.upcase
 end
 def course1a
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn1.upcase
 end
 def course1q
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn1.upcase
 end
 def course1e
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn1.upcase
 end
 def course1v
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn1.upcase
 end
 
 
 def course2
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn2.upcase
 end
 def course2b
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn2.upcase
 end
 def course2l
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn2.upcase
 end
 def course2a
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn2.upcase
 end
 def course2q
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn2.upcase
 end
 def course2e
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn2.upcase
 end
 def course2v
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn2.upcase
 end
 
 def course3
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn3.upcase
 end
 def course3b
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn3.upcase
 end
 def course3l
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn3.upcase
 end
 def course3a
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn3.upcase
 end
 def course3q
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn3.upcase
 end
 def course3e
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn3.upcase
 end
 def course3v
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn3.upcase
 end
 
 
 def course4
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn4.upcase
 end
 def course4b
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn4.upcase
 end
 def course4l
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn4.upcase
 end
 def course4a
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn4.upcase
 end
 def course4q
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn4.upcase
 end
 def course4e
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn4.upcase
 end
 def course4v
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn4.upcase
 end
 def course5
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn5.upcase
 end
 def course5b
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn5.upcase
 end
 def course5l
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn5.upcase
 end
 def course5a
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn5.upcase
 end
 def course5q
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn5.upcase
 end
 def course5e
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn5.upcase
 end
 def course5v
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn5.upcase
 end
 def course6
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn6.upcase
 end
 def course6b
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn6.upcase
 end
 def course6l
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn6.upcase
 end
 def course6a
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn6.upcase
 end
 def course6q
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn6.upcase
 end
 def course6e
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn6.upcase
 end
 def course6v
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn6.upcase
 end
 
 
 def course7
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn7.upcase
 end
 def course7b
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn7.upcase
 end
 def course7l
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn7.upcase
 end
 def course7a
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn7.upcase
 end
 def course7q
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn7.upcase
 end
 def course7e
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn7.upcase
 end
 def course7v
-@user = User.find(params[:id])
+@user = current_user
 @title = @user.cn7.upcase
 end
 
