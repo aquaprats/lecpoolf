@@ -1,0 +1,23 @@
+<table class="profile" summary="Profile information">
+<tr>
+<td class="main">
+
+<h1><strong><%=current_user.cn1.upcase%> : Buy/Share Books</strong></h1>
+
+<%Book.order("vcount DESC").each do |t|%>
+<%if current_user.cn1==t.cn%>
+
+<%a=0%>
+<tr>
+<td class="feed">
+<span class="content"><a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%><br/> Category:<%=t.category%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<%if current_user.id==t.user_id %>
+<%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
+
+<%end%>
+
+<td>
+</tr>
+</table>
+

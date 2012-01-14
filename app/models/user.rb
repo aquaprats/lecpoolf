@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
    attr_accessor :password,:password_confirmation
 attr_accessible :name, :email, :password, :password_confirmation,:rollno,:department,:cn1,
-:cn2,:cn3,:cn4,:cn5,:cn6,:cn7, :image, :remote_image_url
+:cn2,:cn3,:cn4,:cn5,:cn6,:cn7,:address,:contact, :image, :remote_image_url
 
 mount_uploader :image, ImageUploader
 has_many :attachments,:dependent => :destroy
@@ -14,7 +14,7 @@ has_many :conversations,:dependent => :destroy
 has_many :comments,:dependent => :destroy
 has_many :messages,:dependent => :destroy
 has_many :favourites,:dependent => :destroy
-
+has_many :books,:dependent => :destroy
 acts_as_voter
 
 
@@ -28,7 +28,7 @@ validates :email, :presence => true,
 validates :password, :presence => true,
 :confirmation => true,
 :length => { :within => 6..40 }
-before_save :encrypt_password
+#before_save :encrypt_password
 
 def has_password?(submitted_password)
 encrypted_password == encrypt(submitted_password)

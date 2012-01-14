@@ -1,0 +1,50 @@
+<h1>Book Sharing</h1>
+<%= form_for @book,:html => {:multipart => true} do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+
+
+<div class="field">
+<%= f.label :bname, "Book Name:" %><br />
+<%= f.text_field :bname %>
+</div>
+
+<div class="field">
+<%= f.label :author, "Author:" %><br />
+<%= f.text_field :author %>
+</div>
+
+<div class="field">
+<%= f.label :edition, "Edition:" %><br />
+<%= f.text_field :edition %>
+</div>
+
+
+<div class="field">
+<%= f.label :cn, "Course No: (Note: Use lower case and don't put a space anywhere. Eg: cs100)" %><br />
+<%= f.text_field :cn %>
+</div>
+
+<div class="field">
+<label for="books_category">Category:</label><br />
+
+<select id="books_category" name="books[category]">
+<option value="Lend">Lend</option>
+<option value="Sell">Sell</option>
+
+
+
+
+
+</div>
+
+</select>
+
+
+
+
+
+
+<div class="actions">
+<%= f.submit "Submit" %>
+</div>
+<% end %>

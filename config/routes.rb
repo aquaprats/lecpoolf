@@ -4,6 +4,8 @@ Sampleapp::Application.routes.draw do
   
  
 
+  resources :books
+
   resources :conversations do
     resources :comments
   end
@@ -180,6 +182,7 @@ match '/users/:id/course1a', :to=>'users#course1a'
 match '/users/:id/course1v', :to=>'users#course1v'
 match '/users/:id/course1e', :to=>'users#course1e'
 match '/users/:id/course1b', :to=>'users#course1b'
+match '/users/:id/course1s', :to=>'users#course1s'
 match '/users/:id/course2', :to=>'users#course2'
 match '/users/:id/course2l', :to=>'users#course2l'
 match '/users/:id/course2q', :to=>'users#course2q'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110711091657) do
+ActiveRecord::Schema.define(:version => 20120114190240) do
 
   create_table "attachments", :force => true do |t|
     t.string   "filename"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(:version => 20110711091657) do
   end
 
   add_index "attachments", ["user_id"], :name => "index_attachments_on_user_id"
+
+  create_table "books", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "bname"
+    t.string   "author"
+    t.string   "edition"
+    t.string   "cn"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "books", ["user_id"], :name => "index_books_on_user_id"
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -102,6 +115,8 @@ ActiveRecord::Schema.define(:version => 20110711091657) do
     t.string   "image"
     t.boolean  "admin",              :default => false
     t.boolean  "activated"
+    t.string   "address"
+    t.integer  "contact"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

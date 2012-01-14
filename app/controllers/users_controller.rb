@@ -12,6 +12,12 @@ def course1b
 @user = current_user
 @title = @user.cn1.upcase
 end
+def course1s
+@user = current_user
+@title = @user.cn1.upcase
+end
+
+
 def course1l
 @user = current_user
 @title = @user.cn1.upcase
