@@ -3,7 +3,7 @@
 <td class="main">
 
 <h1>
-<%= gravatar_for @user %><br />
+<%= image_tag @user.image_url(:thumb) if @user.image? %>
 </h1>
 
 

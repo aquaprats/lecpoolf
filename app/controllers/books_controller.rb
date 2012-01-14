@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 def new
 @title="Books Share|Buy"
 @book = Book.new
-@book.user_id=current_user.id
+
 
 
 end
@@ -11,7 +11,7 @@ end
 
 def create
 @book = Book.new(params[:book])
-
+@book.user_id=current_user.id
 respond_to do |format|
 if @book.save
 format.html { redirect_to(current_user, :notice => 'Book was successfully uploaded.') }

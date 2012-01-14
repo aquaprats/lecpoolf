@@ -1,6 +1,6 @@
 <h1>Book Sharing</h1>
 <%= form_for @book,:html => {:multipart => true} do |f| %>
-<%= render 'shared/error_messages', :object => f.object %>
+
 
 
 <div class="field">
@@ -25,9 +25,9 @@
 </div>
 
 <div class="field">
-<label for="books_category">Category:</label><br />
+<label for="book_category">Category:</label><br />
 
-<select id="books_category" name="books[category]">
+<select id="book_category" name="book[category]">
 <option value="Lend">Lend</option>
 <option value="Sell">Sell</option>
 
@@ -39,7 +39,12 @@
 
 </select>
 
+<div class="field">
+<%= f.label :image,"Pic:"%><br/>
 
+<%= f.file_field :image %>
+
+</div>
 
 
 

@@ -58,6 +58,20 @@
 </div>
 
 </select>
+<div class="field">
+<%= f.label :image,"Profile Pic:"%><br/>
+
+<%= f.file_field :image %>
+
+</div>
+
+<div class="field">
+
+<%= f.label :remote_image_url, "Or Image URL" %><br />
+
+<%= f.text_field :remote_image_url %>
+
+</div>
 <div class="actions">
 <%= f.submit "Sign up" %>
 </div>

@@ -16,7 +16,7 @@ has_many :messages,:dependent => :destroy
 has_many :favourites,:dependent => :destroy
 has_many :books,:dependent => :destroy
 acts_as_voter
-
+before_save :encrypt_password, :unless => "password.blank?"
 
 
   email_regex = /\A[\w+\-.]+@iitk.ac.in/i

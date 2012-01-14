@@ -47,14 +47,25 @@
 <%= f.text_field :cn7 %>
 </div>
 
+<div class="field">
+<%= f.label :image,"Profile Pic:"%><br/>
 
+<%= f.file_field :image %>
 
+</div>
+<br/>
+
+<div class="field">
+
+<%= f.label :remote_image_url, "Or Image URL" %><br />
+
+<%= f.text_field :remote_image_url %>
+
+</div>
+<br/>
 
 <div class="actions">
 <%= f.submit "Update" %>
 </div>
 <% end %>
-<div>
-<%= gravatar_for @user %>
-<a href="http://gravatar.com/emails">change</a>
-</div>
+

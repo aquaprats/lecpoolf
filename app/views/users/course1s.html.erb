@@ -4,20 +4,28 @@
 
 <h1><strong><%=current_user.cn1.upcase%> : Buy/Share Books</strong></h1>
 
-<%Book.order("vcount DESC").each do |t|%>
+<%Book.all.each do |t|%>
 <%if current_user.cn1==t.cn%>
 
 <%a=0%>
 <tr>
 <td class="feed">
-<span class="content"><a href ="/attachments/<%=t.id%>/file"><%=t.filename%></a> <br />  Posted By:<%=t.user.name%><br/> Category:<%=t.category%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<strong> <font size="4">
+Book Name: </strong><b><%=t.bname%></b> <br />
+Author:<%=t.author%> <br />
+Edition:<%=t.edition%><br />
+Category:<%=t.category%> <br />
+<%= image_tag t.image_url(:thumb) if t.image? %>
+Posted By:<a href="/users/<%=t.user_id%>/info"><%=t.user.name%></a><br/>
 
 <%if current_user.id==t.user_id %>
 <%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
-
+<br /><br />
+</div>
 <%end%>
-
+<%end%>
+<%end%>
 <td>
 </tr>
 </table>
-
