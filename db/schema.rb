@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120114214243) do
+ActiveRecord::Schema.define(:version => 20120115004739) do
 
   create_table "attachments", :force => true do |t|
     t.string   "filename"
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(:version => 20120114214243) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.integer  "buy"
+    t.integer  "sell"
+    t.integer  "lend"
+    t.integer  "borrow"
+    t.integer  "bid"
   end
 
   add_index "books", ["user_id"], :name => "index_books_on_user_id"
@@ -118,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20120114214243) do
     t.boolean  "activated"
     t.string   "address"
     t.integer  "contact"
+    t.integer  "credit"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

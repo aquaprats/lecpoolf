@@ -46,7 +46,10 @@ match '/comments/:id/vote_upcm/', :to=>'comments#vote_upcm'
 match '/forums/:id/conversations/',:to=>'conversations#index'  
 post "attachments/create"
 
-
+match '/books/:id/buy/' , :to=>'books#buy'
+match '/books/:id/sell/' , :to=>'books#sell'
+match '/books/:id/borrow/' , :to=>'books#borrow'
+match '/books/:id/lend/' , :to=>'books#lend'
 match '/attachments/:id/vote_up1/', :to=>'attachments#vote_up1'
 match '/attachments/:id/vote_down1/', :to=>'attachments#vote_down1'
 match '/attachments/:id/vote_up1b/', :to=>'attachments#vote_up1b'

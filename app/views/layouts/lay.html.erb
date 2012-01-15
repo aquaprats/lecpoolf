@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="shortcut icon" href="/../../../images/icon.ico" type="image/x-icon"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title id="title" class="title"> Lecpool | <%=@title %></title>
+<%=render 'layouts/stylesheets'%>
+
+
+<script src="http://jquery.com/src/jquery-latest.js"></script>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag :all %>
+<%= csrf_meta_tag %>
+</head>
+<body>
+<div class="container">
+
+<%=render 'layouts/header'%>
+
+
+<div class="home1">
+
+
+<h1>Welcome to Lecpool !!!</h1>
+<h2>
+A place where <b>IIT-K</b> students can:</h2>
+<ul>
+<li><h3><b>Buy/Sell</b> & <b>Lend/Borrow</b> their Course Books</li></h3>
+<li><h3><b>Share</b> their Lecture Notes & Educational Videos</li></h3>
+
+<li><h3><b>Chat</b> via their Facebook/Twitter/Yahoo accounts</li></h3>
+
+<li><h3>Request <b>'private help'</b> from another User</li></h3>
+<li><h3>Discuss their problems publicly on our <b>Forum</b> </li></h3>
+</ul>
+
+
+
+
+<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+</div>
+<div class="home2">
+<h1>Sign in</h1>
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+<div class="field">
+<%= f.label :email %><br />
+<%= f.text_field :email %>
+</div>
+<div class="field">
+<%= f.label :password %><br />
+<%= f.password_field :password %>
+</div>
+<div class="actions">
+<%= f.submit "Sign in" %>
+</div>
+
+
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<% end %>
+<a href="/users/forgot_password/">Forgot Password</a><br /><br />
+<br/>
+</div>
+<br/>
+
+
+
+
+
+
+
+</div>
+<%=render 'layouts/footer'%>
+
+
+</body>
+</html>

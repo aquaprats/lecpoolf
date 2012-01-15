@@ -15,15 +15,31 @@
 Book Name: </strong><b><%=t.bname%></b> <br />
 Author:<%=t.author%> <br />
 Edition:<%=t.edition%><br />
-Category:<%=t.category%> <br />
 <%= image_tag t.image_url(:thumb) if t.image? %>
 Posted By:<a href="/users/<%=t.user_id%>/info"><%=t.user.name%></a><br/>
 
-<%if current_user.id==t.user_id %>
-<%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
-<br /><br />
-</div>
-<%end%>
+			<%if t.user_id==current_user.id && t.category=='Sell' && t.buy==1%>
+			<a href="/books/<%=t.id%>/sell/"<button name="sell" value="sell">Sell</button><br />
+			<%else%> 
+				<%if t.user_id==current_user.id && t.category=='Lend' && t.borrow==1%>
+					<a href="/books/<%=t.id%>/lend/"<button name="lend" value="Lend">Lend</button><br />
+				<%else%>
+					<%if t.user_id!=current_user.id && t.category=='Lend' && t.borrow!=1%>
+					<a href="/books/<%=t.id%>/borrow/"<button name="borrow" value="Borrow">Borrow</button><br />
+					<%else%> 
+						<%if t.user_id!=current_user.id && t.category=='Sell' && t.buy!=1%>
+						<a href="/books/<%=t.id%>/buy/"<button name="buy" value="Buy">Buy</button><br />
+						<%end%>
+					<%end%>
+				<%end%>
+			<%end%>
+			
+			<%if t.buy==1 && t.sell==1%>
+			
+			<%= link_to 'Delete', t, :confirm => 'Are you sure?', :method => :delete %><br/>
+			<br /><br />
+			</div>
+			<%end%>
 <%end%>
 <%end%>
 <td>

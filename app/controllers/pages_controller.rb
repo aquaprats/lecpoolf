@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
  def home
 @title="Home"
+render :layout => "lay"
   end
 def about
 @title="About"
