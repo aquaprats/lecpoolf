@@ -93,7 +93,15 @@ padding: 20px;
 -moz-border-radius-topleft: 10px;
 -moz-border-radius-topright: 41px;
 
--webkit-border-radius: 10px;
+-webkit-border-radius-bottomleft: 41px;
+-webkit-border-radius-bottomright: 10px;
+-webkit-border-radius-topleft: 10px;
+-webkit-border-radius-topright: 41px;
+
+-o-border-radius-bottomleft: 41px;
+-o-border-radius-bottomright: 10px;
+-o-border-radius-topleft: 10px;
+-o-border-radius-topright: 41px;
 
 }
 footer {
