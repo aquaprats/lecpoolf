@@ -96,9 +96,9 @@ padding: 20px;
 
 
 border-bottom-left-radius: 41px;
-border-radius-bottom-right-radius: 10px;
-border-radius-top-left-radius: 10px;
-border-radius-top-right-radius: 41px;
+border-bottom-right-radius: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 41px;
 
 }
 footer {
