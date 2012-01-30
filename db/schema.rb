@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(:version => 20120115004739) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.integer  "buy"
-    t.integer  "sell"
-    t.integer  "lend"
-    t.integer  "borrow"
+    t.integer  "buy",        :default => 0
+    t.integer  "sell",       :default => 0
+    t.integer  "lend",       :default => 0
+    t.integer  "borrow",     :default => 0
     t.integer  "bid"
   end
 
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20120115004739) do
     t.boolean  "activated"
     t.string   "address"
     t.integer  "contact"
-    t.integer  "credit"
+    t.integer  "credit",             :default => 1
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

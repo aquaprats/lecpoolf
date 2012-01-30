@@ -3,7 +3,7 @@ Sampleapp::Application.routes.draw do
 
   
  
-
+match '/books/new' , :to=>'books#new'
   resources :books
 
   resources :conversations do

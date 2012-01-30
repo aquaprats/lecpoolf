@@ -24,6 +24,8 @@
 
 <% if signed_in? %>
 <li><%= link_to "UPLOAD", attachments_create_path  %></li>
+<li><%= link_to "BOOKS SHARE", books_new_path %></li>
+
 <li><%= link_to "FORUM", forums_path %></li>
 
 <li><%= link_to "SIGN OUT", signout_path, :method => :delete %></li>

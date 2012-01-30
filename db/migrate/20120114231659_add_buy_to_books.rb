@@ -1,6 +1,6 @@
 class AddBuyToBooks < ActiveRecord::Migration
   def self.up
-    add_column :books, :buy, :integer
+    add_column :books, :buy, :integer,:default=>0
   end
 
   def self.down

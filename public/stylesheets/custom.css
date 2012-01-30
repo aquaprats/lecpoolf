@@ -80,6 +80,13 @@ font-size: 150%;
 font-weight: bold;
 padding: 20px;
 }
+.home1{
+-moz-border-radius: 25px 25px 25px 25px; float: left; background-color: white; width: 50%; margin-top: 25px; margin-right: 40px; padding-top: 40px; padding-left: 40px;padding-bottom:40px;
+}
+
+.home2{-moz-border-radius: 25px 25px 25px 25px; float: right; background-color: white; width: 35%; margin-top: 25px; padding-top: 40px; padding-left: 20px; padding-bottom:80px;
+}
+
 .round {
 -moz-border-radius-bottomleft: 41px;
 -moz-border-radius-bottomright: 10px;
@@ -92,7 +99,6 @@ padding: 20px;
 footer {
 text-align: center;
 margin-top: 10px;
-
 
 margin-right: auto;
 }
