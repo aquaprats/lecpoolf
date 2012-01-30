@@ -81,10 +81,10 @@ font-weight: bold;
 padding: 20px;
 }
 .home1{
--moz-border-radius: 25px 25px 25px 25px; float: left; background-color: white; width: 50%; margin-top: 25px; margin-right: 40px; padding-top: 40px; padding-left: 40px;padding-bottom:40px;
+-moz-border-radius: 25px 25px 25px 25px;-webkit-border-radius: 25px 25px 25px 25px;-o-border-radius: 25px 25px 25px 25px; float: left; background-color: white; width: 50%; margin-top: 25px; margin-right: 40px; padding-top: 40px; padding-left: 40px;padding-bottom:40px;
 }
 
-.home2{-moz-border-radius: 25px 25px 25px 25px; float: right; background-color: white; width: 35%; margin-top: 25px; padding-top: 40px; padding-left: 20px; padding-bottom:80px;
+.home2{-moz-border-radius: 25px 25px 25px 25px;-webkit-border-radius: 25px 25px 25px 25px;-o-border-radius: 25px 25px 25px 25px; float: right; background-color: white; width: 35%; margin-top: 25px; padding-top: 40px; padding-left: 20px; padding-bottom:80px;
 }
 
 .round {
