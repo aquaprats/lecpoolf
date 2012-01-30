@@ -15,7 +15,7 @@
 Book Name: </strong><b><%=t.bname%></b> <br />
 Author:<%=t.author%> <br />
 Edition:<%=t.edition%><br />
-<%= image_tag t.image_url(:thumb) if t.image? %>
+
 Posted By:<a href="/users/<%=t.user_id%>/info"><%=t.user.name%></a><br/>
 
 			<%if t.user_id==current_user.id && t.category=='Sell' && t.buy==1%>

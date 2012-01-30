@@ -1,0 +1,56 @@
+<div class="field">
+<label for="user_contact">Contact No</label><br />
+<input id="user_contact" name="user[contact]" size="10" />
+</div> // in users/new.html.erb
+
+<strong><font size="4"><b>Contact No: </strong> <%= @user.contact %></font></b><br /> //in users/info.html.erb
+
+
+
+<div class="field">
+<%= f.label :image,"Pic:"%><br/>
+
+<%= f.file_field :image %>
+
+</div> // in books/new.html.erb
+
+
+
+<%= image_tag t.image_url(:thumb) if t.image? %> // in course1s.html.erb
+
+
+
+<div class="field">
+<%= f.label :image,"Profile Pic:"%><br/>
+
+<%= f.file_field :image %>
+
+</div>
+
+<div class="field">
+
+<%= f.label :remote_image_url, "Or Image URL" %><br />
+
+<%= f.text_field :remote_image_url %>
+
+</div>   // in users/new.html.erb
+
+
+<%= image_tag @user.image_url(:thumb) if @user.image? %> // in users/info.html.erb
+
+
+<div class="field">
+<%= f.label :image,"Profile Pic:"%><br/>
+
+<%= f.file_field :image %>
+
+</div>
+<br/>
+
+<div class="field">
+
+<%= f.label :remote_image_url, "Or Image URL" %><br />
+
+<%= f.text_field :remote_image_url %>
+
+</div> // in users/edit.html.erb
